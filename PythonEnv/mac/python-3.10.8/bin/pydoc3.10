@@ -1,0 +1,5 @@
+#!/Users/sivanzeng/Desktop/Python-Apple-support-3.10/install/macOS/macosx/python-3.10.8/bin/python3.10
+
+import pydoc
+if __name__ == '__main__':
+    pydoc.cli()

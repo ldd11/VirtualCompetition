@@ -1,0 +1,339 @@
+- category: EditorSetting
+  enabled: true
+  rules:
+  - name: Editor AndroidManagedStrippingLevel Setting
+    description: ManagedStrippingLevel in Android should not be Low or Disabled
+    enabled: true
+    platform: Android
+  - name: Editor Physics2D AutoSyncTransforms Setting
+    description: AutoSyncTransforms should be set to false in Physics2D setting
+    enabled: true
+    platform: All
+  - name: Editor Physics AutoSyncTransforms Setting
+    description: AutoSyncTransforms should be set to false in Physics
+    enabled: true
+    platform: All
+  - name: Editor BakeCollisionMeshes Setting
+    description: BakeCollisionMeshes should be set to true
+    enabled: true
+    platform: All
+  - name: CompanyName should be set
+    description: CompanyName should be set
+    enabled: true
+    platform: All
+  - name: Editor GraphicsJobs Setting
+    description: GraphicsJobs should be set to true
+    enabled: true
+    platform: All
+  - name: Editor AccelerometerFrequency iOS Setting
+    description: AccelerometerFrequency in iOS should be Disabled
+    enabled: true
+    platform: iOS
+  - name: Editor Architecture iOS Setting
+    description: Architecture in iOS should not be Universal
+    enabled: true
+    platform: iOS
+  - name: Editor GraphicsAPIs iOS Setting
+    description: There should be only Metal in GraphicsAPIs in iOS
+    enabled: true
+    platform: iOS
+  - name: Editor iOSManagedStrippingLevel Setting
+    description: ManagedStrippingLevel in iOS should not be Low
+    enabled: true
+    platform: iOS
+  - name: Build Target Icons should be set
+    description: Build target icons should be set
+    enabled: true
+    platform: All
+  - name: Editor Physics2D LayerCollisionMatrix Setting
+    description: boxes of LayerCollisionMatrix should not be all ticked in Physics2D
+    enabled: true
+    platform: All
+  - name: Editor Physics LayerCollisionMatrix Setting
+    description: boxes of LayerCollisionMatrix should not be all ticked in Physics
+    enabled: true
+    platform: All
+  - name: Project Use Resources Folder
+    description: Project should not use Resources system for assets management
+    enabled: true
+    platform: All
+  - name: Editor Graphics StandardShaderQuality Setting
+    description: StandardShaderQuality should be same across all Graphics Tiers
+    enabled: true
+    platform: All
+  - name: Editor StripEngineCode Setting
+    description: StripEngineCode should be set to true
+    enabled: true
+    platform: All
+- category: Animation
+  enabled: true
+  rules:
+  - name: Animation Precision
+    description: Animation curves precision should not be less than a certain value,
+      default is 5
+    enabled: true
+    platform: All
+    customParameters:
+      precision: 5
+  - name: Animation Scale
+    description: Animation should not have scale curves
+    enabled: true
+    platform: All
+- category: Audio
+  enabled: true
+  rules:
+  - name: Audio Android Compression Format
+    description: check the Audio compression format for Android platform
+    enabled: true
+    platform: Android
+  - name: Audio load type
+    description: check audio load type
+    enabled: true
+    platform: All
+  - name: Force to Mono
+    description: forceMono should be enabled for audio asset
+    enabled: true
+    platform: All
+  - name: Audio iOS compression format
+    description: check the Audio compression format for iOS platform
+    enabled: true
+    platform: iOS
+- category: FBX
+  enabled: true
+  rules:
+  - name: Animation Compression Optimal
+    description: Compression should be Optimal for Animation asset
+    enabled: true
+    platform: All
+  - name: Animation OptimizeGameObjects
+    description: OptimizeGameObjects should be true for Animation asset
+    enabled: true
+    platform: All
+  - name: FBX Read&Write Flag
+    description: Read/Write flag should be disabled for FBX asset
+    enabled: true
+    platform: All
+  - name: Mesh OptimizeMesh
+    description: OptimizeMesh should be enabled for Mesh asset
+    enabled: true
+    platform: All
+  - name: FBX Skeleton Count
+    description: There is too many skeletons in FBX asset, default limit is 50
+    enabled: true
+    platform: All
+    customParameters:
+      skeletonCountLimit: 50
+  - name: FBX Vertex Count
+    description: There is too many vertices in FBX asset, default limit is 500
+    enabled: true
+    platform: All
+    customParameters:
+      vertexCountLimit: 500
+- category: Material
+  enabled: true
+  rules:
+  - name: Material With Standard Shader
+    description: Using Standard Shader in Material will increase loading time and
+      ShaderLab memory size.
+    enabled: true
+    platform: All
+- category: Mesh
+  enabled: true
+  rules:
+  - name: Mesh Read&Write Flag
+    description: Read/Write flag should be disabled for Mesh asset
+    enabled: true
+    platform: All
+- category: Prefab
+  enabled: true
+  rules:
+  - name: Prefab Max Particle Limit
+    description: Particle system rendering mesh shouldn't set large MAX Particle limit,
+      should not be more than 30
+    enabled: true
+    platform: All
+    customParameters:
+      maxParticleLimit: 30
+  - name: Prefab mesh emit rate
+    description: Particle system rendering mesh shouldn't set high emit rate, should
+      not be more than 5
+    enabled: true
+    platform: All
+    customParameters:
+      emitRateLimit: 5
+  - name: Prefab mesh Read/Write flag
+    description: Meshes referenced by prefab should turn off Read/Write flag.
+    enabled: true
+    platform: All
+  - name: Prefab particle system prewarm
+    description: Enable prewarm in particle system may cause lagging in games.
+    enabled: true
+    platform: All
+  - name: Prefab skinned mesh render
+    description: Enabling motion vectors will increase accuracy of skinned mesh at
+      the cost of double memory usage
+    enabled: true
+    platform: All
+- category: Scene
+  enabled: true
+  rules:
+  - name: Scene Animator AlwaysAnimate
+    description: there is Animator with cullingMode AlwaysAnimate in Scene
+    enabled: true
+    platform: All
+  - name: Scene Animator ApplyRootMotion
+    description: there is Animator with applyRootMotion true in Scene
+    enabled: true
+    platform: All
+  - name: Scene Canvas Component
+    description: Canvas with too many components may affect the performance of UI
+      refreshing
+    enabled: true
+    platform: All
+  - name: Scene Mesh Collider
+    description: A scene should not contain mesh collider
+    enabled: true
+    platform: All
+  - name: Scene Multiple Audio Listeners
+    description: A scene shouldn't contain more than one Audio Listener
+    enabled: true
+    platform: All
+  - name: Scene Render Setting
+    description: Render setting of fog should be turned off for mobile platforms
+    enabled: true
+    platform: All
+  - name: Scene Rigidbody
+    description: Static GameObjects in scene should not associate rigidbody
+    enabled: true
+    platform: All
+  - name: Scene Undefined Tag
+    description: All game objects in scene should be associated with tag
+    enabled: true
+    platform: All
+- category: Script
+  enabled: true
+  rules:
+  - name: Empty Update Method
+    description: MonoBehaviour script should not have empty update method
+    enabled: true
+    platform: All
+  - name: OnGUI
+    description: OnGUI method should not be used because of high memory usage
+    enabled: true
+    platform: All
+- category: Shader
+  enabled: true
+  rules:
+  - name: Shader Texture Count
+    description: Texture Count in Shader should be less than a certain value, default
+      is 3
+    enabled: true
+    platform: All
+    customParameters:
+      textureCountLimit: 3
+- category: SpriteAtlas
+  enabled: true
+  rules:
+  - name: SpriteAtlas Android compression format
+    description: check the SpriteAtlas compression format for Android platform
+    enabled: true
+    platform: Android
+  - name: SpriteAtlas Aniso level is not 1
+    description: Aniso level should not >1 for SpriteAtlas asset
+    enabled: true
+    platform: All
+  - name: SpriteAtlas Read&Write Flag
+    description: Read/Write flag should be disabled for SpriteAtlas asset
+    enabled: true
+    platform: All
+  - name: SpriteAtlas Filter mode
+    description: It's recommended not to use Trilinear as filter mode for SpriteAtlas
+    enabled: true
+    platform: All
+  - name: SpriteAtlas iOS compression format
+    description: check the SpriteAtlas compression format for iOS platform
+    enabled: true
+    platform: iOS
+  - name: SpriteAtlas Mipmap Flag
+    description: Mipmap flag should be disabled for SpriteAtlas asset
+    enabled: true
+    platform: All
+- category: Texture
+  enabled: true
+  rules:
+  - name: Texture Android compression format
+    description: check the Texture compression format for Android platform
+    enabled: true
+    platform: Android
+  - name: Aniso level is not 1
+    description: Aniso level should not >1 for Texture asset
+    enabled: true
+    platform: All
+  - name: Texture Read&Write Flag
+    description: Read/Write flag should be disabled for Texture asset
+    enabled: true
+    platform: All
+  - name: Duplicate textures
+    description: Check duplicate texture
+    enabled: true
+    platform: All
+  - name: Texture edge transparent
+    description: Texture with large transparent edge should be cropped to save memory
+    enabled: true
+    platform: All
+  - name: Filter mode
+    description: It's recommended not to use Trilinear as filter mode for Texture
+    enabled: true
+    platform: All
+  - name: Texture iOS compression format
+    description: check the Texture compression format for iOS platform
+    enabled: true
+    platform: iOS
+  - name: Mipmap Flag
+    description: Mipmap flag should be disabled for uncompressed texture asset
+    enabled: true
+    platform: All
+  - name: Texture over sizes
+    description: Check texture size larger than a certain value, default is 512*512
+      and 1024*1024
+    enabled: true
+    platform: All
+    customParameters:
+      sizeThresholds: 512*512,1024*1024
+  - name: Texture pure color
+    description: Pure color texture may waste memory
+    enabled: true
+    platform: All
+    customParameters:
+      widthThreshold: 16
+      heightThreshold: 16
+  - name: Texture size NPOT
+    description: Size should be power-of-two for Texture asset
+    enabled: true
+    platform: All
+  - name: Sprite fill rate
+    description: Check sprite fill rate for Texture asset, default threshold is 0.5
+      and only sprite type will be checked
+    enabled: true
+    platform: All
+    customParameters:
+      fillRateThreshold: 0.5
+      onlyCheckSprite: true
+  - name: Texture useless alpha channel
+    description: If a texture contains empty alpha channel, 'Alpha Source' flag should
+      be turned off
+    enabled: true
+    platform: All
+  - name: Texture wrap mode
+    description: Repeat wrap mode may cause unexpected edge representing on the texture
+    enabled: true
+    platform: All
+- category: Video
+  enabled: true
+  rules:
+  - name: Video size limit
+    description: Size of imported video should not over limit, default at 256MB
+    enabled: true
+    platform: All
+    customParameters:
+      sizeLimit: 256

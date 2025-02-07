@@ -1,0 +1,2250 @@
+[
+  {
+    "id": "UCA100000",
+    "type": "UnityEngine.Camera",
+    "method": "main",
+    "category": "CPU",
+    "problem": "Camera.main property uses FindGameObjectsWithTag() internally and doesn't cache the result.",
+    "solution": "It is advised to cache and use the camera component obtained from Game object instead."
+  },
+  {
+    "id": "UCA100001",
+    "type": "UnityEngine.WebCamTexture",
+    "method": "GetPixels",
+    "category": "Memory",
+    "problem": "WebCamTexture.GetPixels() allocates managed memory.",
+    "solution": "Use WebCamTexture.GetPixels32() instead."
+  },
+  {
+    "id": "UCA100002",
+    "type": "UnityEngine.WebCamTexture",
+    "method": "GetPixels32",
+    "category": "Memory",
+    "problem": "WebCamTexture.GetPixels32() allocates managed memory if a suitable array is not provided as a parameter.",
+    "solution": "Ensure that you pass an array of Color32[] to this API method for it to fill out, to avoid creating a new array every time the method is called."
+  },
+  {
+    "id": "UCA100003",
+    "type": "UnityEngine.GeometryUtility",
+    "method": "CalculateFrustumPlanes",
+    "category": "Memory",
+    "problem": "Some versions of GeometryUtility.CalculateFrustumPlanes() allocate managed memory.",
+    "solution": "Ensure that you use the CalculateFrustumPlanes(Matrix4x4 worldToProjectionMatrix, Plane[] planes) version of this API method, in order to be able to pass a pre-allocated Array of Planes."
+  },
+  {
+    "id": "UCA100004",
+    "type": "UnityEngine.Resources",
+    "method": "FindObjectsOfTypeAll",
+    "category": "Memory",
+    "problem": "Resources.FindObjectsOfTypeAll() allocates managed memory.",
+    "solution": "Use Resources.FindObjectsOfTypeNonAlloc() instead."
+  },
+  {
+    "id": "UCA100005",
+    "type": "UnityEngine.Texture2D",
+    "method": "GetPixels",
+    "category": "Memory",
+    "problem": "Texture2D.GetPixels() allocates managed memory.",
+    "solution": "Use Texture2D.GetRawTextureData() instead. This method returns a NativeArray of pixel data, and so does not allocate managed memory."
+  },
+  {
+    "id": "UCA100006",
+    "type": "UnityEngine.Texture2D",
+    "method": "GetPixels32",
+    "category": "Memory",
+    "problem": "Texture2D.GetPixels32() allocates managed memory.",
+    "solution": "Use Texture2D.GetRawTextureData() instead. This method returns a NativeArray of pixel data, and so does not allocate managed memory."
+  },
+  {
+    "id": "UCA100007",
+    "type": "UnityEngine.Rigidbody",
+    "method": "SweepTestAll",
+    "category": "Memory",
+    "problem": "Rigidbody.SweepTestAll() allocates managed memory.",
+    "solution": "Use Rigidbody.SweepTestNonAlloc() instead."
+  },
+  {
+    "id": "UCA100008",
+    "type": "UnityEngine.Physics",
+    "method": "RaycastAll",
+    "category": "Memory",
+    "problem": "Physics.RaycastAll() allocates managed memory.",
+    "solution": "Use Physics.RaycastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100009",
+    "type": "UnityEngine.Physics",
+    "method": "CapsuleCastAll",
+    "category": "Memory",
+    "problem": "Physics.CapsuleCastAll() allocates managed memory.",
+    "solution": "Use Physics.CapsuleCastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100010",
+    "type": "UnityEngine.Physics",
+    "method": "SphereCastAll",
+    "category": "Memory",
+    "problem": "Physics.SphereCastAll() allocates managed memory.",
+    "solution": "Use Physics.SphereCastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100011",
+    "type": "UnityEngine.Physics",
+    "method": "BoxCastAll",
+    "category": "Memory",
+    "problem": "Physics.BoxCastAll() allocates managed memory.",
+    "solution": "Use Physics.BoxCastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100012",
+    "type": "UnityEngine.Physics",
+    "method": "OverlapCapsule",
+    "category": "Memory",
+    "problem": "Physics.OverlapCapsule() allocates managed memory.",
+    "solution": "Use Physics.OverlapCapsuleNonAlloc() instead."
+  },
+  {
+    "id": "UCA100013",
+    "type": "UnityEngine.Physics",
+    "method": "OverlapSphere",
+    "category": "Memory",
+    "problem": "Physics.OverlapSphere() allocates managed memory.",
+    "solution": "Use Physics.OverlapSphereNonAlloc() instead."
+  },
+  {
+    "id": "UCA100014",
+    "type": "UnityEngine.Physics",
+    "method": "OverlapBox",
+    "category": "Memory",
+    "problem": "Physics.OverlapBox() allocates managed memory.",
+    "solution": "Use Physics.OverlapBoxNonAlloc() instead."
+  },
+  {
+    "id": "UCA100015",
+    "type": "UnityEngine.Physics2D",
+    "method": "LinecastAll",
+    "category": "Memory",
+    "problem": "Physics2D.LinecastAll() allocates managed memory.",
+    "solution": "Use Physics2D.LinecastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100016",
+    "type": "UnityEngine.Physics2D",
+    "method": "RaycastAll",
+    "category": "Memory",
+    "problem": "Physics2D.RaycastAll() allocates managed memory.",
+    "solution": "Use Physics2D.RaycastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100017",
+    "type": "UnityEngine.Physics2D",
+    "method": "CircleCastAll",
+    "category": "Memory",
+    "problem": "Physics2D.CircleCastAll() allocates managed memory.",
+    "solution": "Use Physics2D.CircleCastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100018",
+    "type": "UnityEngine.Physics2D",
+    "method": "BoxCastAll",
+    "category": "Memory",
+    "problem": "Physics2D.BoxCastAll() allocates managed memory.",
+    "solution": "Use Physics2D.BoxCastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100019",
+    "type": "UnityEngine.Physics2D",
+    "method": "CapsuleCastAll",
+    "category": "Memory",
+    "problem": "Physics2D.CapsuleCastAll() allocates managed memory.",
+    "solution": "Use Physics2D.CapsuleCastNonAlloc() instead."
+  },
+  {
+    "id": "UCA100020",
+    "type": "UnityEngine.Physics2D",
+    "method": "GetRayIntersectionAll",
+    "category": "Memory",
+    "problem": "Physics2D.GetRayIntersectionAll() allocates managed memory.",
+    "solution": "Use Physics2D.GetRayIntersectionNonAlloc() instead."
+  },
+  {
+    "id": "UCA100021",
+    "type": "UnityEngine.Physics2D",
+    "method": "OverlapPointAll",
+    "category": "Memory",
+    "problem": "Physics2D.OverlapPointAll() allocates managed memory.",
+    "solution": "Use Physics2D.OverlapPointNonAlloc() instead."
+  },
+  {
+    "id": "UCA100022",
+    "type": "UnityEngine.Physics2D",
+    "method": "OverlapCircleAll",
+    "category": "Memory",
+    "problem": "Physics2D.OverlapCircleAll() allocates managed memory.",
+    "solution": "Use Physics2D.OverlapCircleNonAlloc() instead."
+  },
+  {
+    "id": "UCA100023",
+    "type": "UnityEngine.Physics2D",
+    "method": "OverlapBoxAll",
+    "category": "Memory",
+    "problem": "Physics2D.OverlapBoxAll() allocates managed memory.",
+    "solution": "Use Physics2D.OverlapBoxNonAlloc() instead."
+  },
+  {
+    "id": "UCA100024",
+    "type": "UnityEngine.Physics2D",
+    "method": "OverlapAreaAll",
+    "category": "Memory",
+    "problem": "Physics2D.OverlapAreaAll() allocates managed memory.",
+    "solution": "Use Physics2D.OverlapAreaNonAlloc() instead."
+  },
+  {
+    "id": "UCA100025",
+    "type": "UnityEngine.Physics2D",
+    "method": "OverlapCapsuleAll",
+    "category": "Memory",
+    "problem": "Physics2D.OverlapCapsuleAll() allocates managed memory.",
+    "solution": "Use Physics2D.OverlapCapsuleNonAlloc() instead."
+  },
+  {
+    "id": "UCA100026",
+    "type": "UnityEngine.Component",
+    "method": "GetComponentsInChildren",
+    "category": "Memory",
+    "problem": "Component.GetComponentsInChildren() allocates managed memory.",
+    "solution": "Ensure you are using one of the versions of GameObject.GetComponentsInChildren() which accepts a List<T> as a parameter and populates it with the components it finds."
+  },
+  {
+    "id": "UCA100027",
+    "type": "UnityEngine.Component",
+    "method": "GetComponentsInParent",
+    "category": "Memory",
+    "problem": "Component.GetComponentsInParent() allocates managed memory.",
+    "solution": "Ensure you are using one of the versions of GameObject.GetComponentsInParent() which accepts a List<T> as a parameter and populates it with the components it finds."
+  },
+  {
+    "id": "UCA100028",
+    "type": "UnityEngine.GameObject",
+    "method": "GetComponentsInChildren",
+    "category": "Memory",
+    "problem": "Some versions of GameObject.GetComponentsInChildren() allocate managed memory.",
+    "solution": "Ensure you are using one of the versions of GameObject.GetComponentsInChildren() which accepts a List<T> as a parameter and populates it with the components it finds."
+  },
+  {
+    "id": "UCA100029",
+    "type": "UnityEngine.GameObject",
+    "method": "GetComponentsInParent",
+    "category": "Memory",
+    "problem": "Some versions of GameObject.GetComponentsInParent() allocate managed memory.",
+    "solution": "Ensure you are using one of the versions of GameObject.GetComponentsInParent() which accepts a List<T> as a parameter and populates it with the components it finds."
+  },
+  {
+    "id": "UCA100030",
+    "type": "UnityEngine.Collider",
+    "method": "OnTriggerStay",
+    "category": "CPU",
+    "problem": "OnTriggerStay() methods can detrimentally affect performance if they perform a lot of processing or if there are many Colliders which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnTriggerStay() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100031",
+    "type": "UnityEngine.MonoBehaviour",
+    "method": "OnTriggerStay",
+    "category": "CPU",
+    "problem": "OnTriggerStay() methods can detrimentally affect performance if they perform a lot of processing or if there are many MonoBehaviours which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnTriggerStay() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100032",
+    "type": "UnityEngine.Collider2D",
+    "method": "OnTriggerStay2D",
+    "category": "CPU",
+    "problem": "OnTriggerStay2D() methods can detrimentally affect performance if they perform a lot of processing or if there are many Collider2Ds which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnTriggerStay2D() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100033",
+    "type": "UnityEngine.MonoBehaviour",
+    "method": "OnTriggerStay2D",
+    "category": "CPU",
+    "problem": "OnTriggerStay2D() methods can detrimentally affect performance if they perform a lot of processing or if there are many MonoBehaviours which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnTriggerStay2D() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100034",
+    "type": "UnityEngine.Collider",
+    "method": "OnCollisionStay",
+    "category": "CPU",
+    "problem": "OnCollisionStay() methods can detrimentally affect performance if they perform a lot of processing or if there are many Colliders which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnCollisionStay() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100035",
+    "type": "UnityEngine.MonoBehaviour",
+    "method": "OnCollisionStay",
+    "category": "CPU",
+    "problem": "OnCollisionStay() methods can detrimentally affect performance if they perform a lot of processing or if there are many MonoBehaviours which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnCollisionStay() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100036",
+    "type": "UnityEngine.RigidBody",
+    "method": "OnCollisionStay",
+    "category": "CPU",
+    "problem": "OnCollisionStay() methods can detrimentally affect performance if they perform a lot of processing or if there are many RigidBodies which implement this method.",
+    "solution": "Profile CPU performance to look for bottlenecks, examine the contents of all OnCollisionStay() methods, and consider refactoring code to not use them."
+  },
+  {
+    "id": "UCA100037",
+    "type": "UnityEngine.ImageConversion",
+    "method": "LoadImage",
+    "category": "Memory",
+    "problem": "ImageConversion.LoadImage() defaults to maintaining a CPU-accessible copy of the image. This is a waste of memory if not needed.",
+    "solution": "If a CPU-accessible copy of the texture is not required, ensure that the markNonReadable flag passed into the method is set to true."
+  },
+  {
+    "id": "UCA100038",
+    "type": "UnityEngine.BillboardRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "BillboardRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use BillboardRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100039",
+    "type": "UnityEngine.Renderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "Renderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use Renderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100040",
+    "type": "UnityEngine.TrailRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "TrailRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use TrailRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100041",
+    "type": "UnityEngine.LineRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "LineRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use LineRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100042",
+    "type": "UnityEngine.SkinnedMeshRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "SkinnedMeshRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use SkinnedMeshRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100043",
+    "type": "UnityEngine.MeshRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "MeshRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use MeshRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100044",
+    "type": "UnityEngine.SpriteRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "SpriteRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use SpriteRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100045",
+    "type": "UnityEngine.ParticleSystemRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "ParticleSystemRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use ParticleSystemRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100046",
+    "type": "UnityEngine.SpriteMask",
+    "method": "material",
+    "category": "GPU",
+    "problem": "SpriteMask.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use SpriteMask.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100047",
+    "type": "UnityEngine.Experimental.U2D.SpriteShapeRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "Experimental.U2D.SpriteShapeRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use Experimental.U2D.SpriteShapeRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100048",
+    "type": "UnityEngine.Tilemaps.TilemapRenderer",
+    "method": "material",
+    "category": "GPU",
+    "problem": "Tilemaps.TilemapRenderer.material: this property creates a unique copy of the Renderer's material. This breaks draw call batching and results in a higher number of draw calls, impacting rendering performance.",
+    "solution": "If possible, use Tilemaps.TilemapRenderer.sharedMaterial instead."
+  },
+  {
+    "id": "UCA100049",
+    "type": "System.Linq",
+    "method": "*",
+    "category": "Memory",
+    "problem": "Linq allocates large amounts of managed memory.",
+    "solution": "We strongly advise against using Linq in any frequently-updated code. Ban its usage from the project entirely, or confine it to initialization code and use it sparingly."
+  },
+  {
+    "id": "UCA100050",
+    "type": "System.Reflection",
+    "method": "*",
+    "category": "CPU",
+    "problem": "Reflection is slow, and not generally considered performant enough for runtime code.",
+    "solution": "Remove code which relies on reflection, or minimise its usage, particularly outside of initialization."
+  },
+  {
+    "id": "UCA100051",
+    "type": "UnityEngine.ComputeBuffer",
+    "method": "GetData",
+    "category": "CPU",
+    "problem": "ComputeBuffer.GetData() stalls the CPU until the GPU has finished accessing the buffer. This can lead to significant CPU performance problems",
+    "solution": "Avoid reading back from ComputeBuffers if it is at all possible. If it's unavoidable, profile your project carefully and regularly to monitor the performance impact."
+  },
+  {
+    "id": "UCA100052",
+    "type": "UnityEngine.Texture2D",
+    "method": "SetPixels",
+    "category": "CPU",
+    "problem": "Texture2D.SetPixels() is slower than SetPixels32().",
+    "solution": "Use Texture2D.SetPixels32() or GetRawTextureData()/Apply() instead."
+  },
+  {
+    "id": "UCA100053",
+    "type": "UnityEngine.Texture3D",
+    "method": "SetPixels",
+    "category": "CPU",
+    "problem": "Texture3D.SetPixels() is slower than SetPixels32().",
+    "solution": "Use Texture3D.SetPixels32() instead."
+  },
+  {
+    "id": "UCA100054",
+    "type": "UnityEngine.Texture2DArray",
+    "method": "SetPixels",
+    "category": "CPU",
+    "problem": "Texture2DArray.SetPixels() is slower than SetPixels32().",
+    "solution": "Use Texture2DArray.SetPixels32() instead."
+  },
+  {
+    "id": "UCA100055",
+    "type": "UnityEngine.CubemapArray",
+    "method": "SetPixels",
+    "category": "CPU",
+    "problem": "CubemapArray.SetPixels() is slower than SetPixels32().",
+    "solution": "Use CubemapArray.SetPixels32() instead."
+  },
+  {
+    "id": "UCA100056",
+    "type": "UnityEngine.GameObject",
+    "method": "SendMessage",
+    "category": "CPU",
+    "problem": "GameObject.SendMessage() is a very slow and CPU-intensive method.",
+    "solution": "Implement a custom system to replace SendMessage - get the components you want to send messages and call methods directly on them."
+  },
+  {
+    "id": "UCA100057",
+    "type": "UnityEngine.Component",
+    "method": "SendMessage",
+    "category": "CPU",
+    "problem": "Component.SendMessage() is a very slow and CPU-intensive method.",
+    "solution": "Implement a custom system to replace SendMessage - get the components you want to send messages and call methods directly on them."
+  },
+  {
+    "id": "UCA100058",
+    "type": "UnityEngine.MonoBehaviour",
+    "method": "OnGUI",
+    "category": "CPU",
+    "problem": "OnGUI() is used by the legacy Immediate Mode GUI (IMGUI), which is extremely CPU-intensive. If a single OnGUI() method is present in a project's code, IMGUI will initialize and consume CPU time.",
+    "solution": "Remove all OnGUI() methods from the project code."
+  },
+  {
+    "id": "UCA100059",
+    "type": "UnityEngine.AI.NavMeshPath",
+    "method": "corners",
+    "category": "Memory",
+    "problem": "The property AI.NavMeshPath.corners allocates managed memory.",
+    "solution": "Use AI.NavMeshPath.GetCornersNonAlloc() instead"
+  },
+  {
+    "id": "UCA100060",
+    "type": "UnityEngine.Animator",
+    "method": "parameters",
+    "category": "Memory",
+    "problem": "The property Animator.parameters allocates managed memory.",
+    "solution": "Use Animator.GetParameter() instead."
+  },
+  {
+    "id": "UCA100061",
+    "type": "UnityEngine.Animations.ParentConstraint",
+    "method": "translationOffsets",
+    "category": "Memory",
+    "problem": "The property Animations.ParentConstraint.translationOffsets allocates managed memory.",
+    "solution": "Use Animations.ParentConstraint.GetTranslationOffset() instead."
+  },
+  {
+    "id": "UCA100062",
+    "type": "UnityEngine.Animations.ParentConstraint",
+    "method": "rotationOffsets",
+    "category": "Memory",
+    "problem": "The property Animations.ParentConstraint.rotationOffsets allocates managed memory.",
+    "solution": "Use Animations.ParentConstraint.GetRotationOffset() instead."
+  },
+  {
+    "id": "UCA100063",
+    "type": "UnityEngine.AnimationCurve",
+    "method": "keys",
+    "category": "Memory",
+    "problem": "The property AnimationCurve.keys allocates managed memory.",
+    "solution": "Use AnimationCurve.AddKey()/MoveKey()/RemoveKey() instead."
+  },
+  {
+    "id": "UCA100064",
+    "type": "UnityEngine.BillboardRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property BillboardRenderer.materials allocates managed memory.",
+    "solution": "Use BillboardRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100065",
+    "type": "UnityEngine.BillboardRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property BillboardRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use BillboardRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100066",
+    "type": "UnityEngine.Camera",
+    "method": "allCameras",
+    "category": "Memory",
+    "problem": "The property Camera.allCameras allocates managed memory.",
+    "solution": "Use Camera.GetAllCameras() instead."
+  },
+  {
+    "id": "UCA100067",
+    "type": "UnityEngine.Mesh",
+    "method": "boneWeights",
+    "category": "Memory",
+    "problem": "The property Mesh.boneWeights allocates managed memory.",
+    "solution": "Use Mesh.GetAllBoneWeights() instead. This method returns a NativeArray of BoneWeight1, and so does not allocate managed memory."
+  },
+  {
+    "id": "UCA100068",
+    "type": "UnityEngine.Mesh",
+    "method": "bindposes",
+    "category": "Memory",
+    "problem": "The property Mesh.bindposes allocates managed memory.",
+    "solution": "Use Mesh.GetBindposes() instead."
+  },
+  {
+    "id": "UCA100069",
+    "type": "UnityEngine.Mesh",
+    "method": "vertices",
+    "category": "Memory",
+    "problem": "The property Mesh.vertices allocates managed memory.",
+    "solution": "Use Mesh.GetVertices() instead."
+  },
+  {
+    "id": "UCA100070",
+    "type": "UnityEngine.Mesh",
+    "method": "normals",
+    "category": "Memory",
+    "problem": "The property Mesh.normals allocates managed memory.",
+    "solution": "Use Mesh.GetNormals() instead."
+  },
+  {
+    "id": "UCA100071",
+    "type": "UnityEngine.Mesh",
+    "method": "tangents",
+    "category": "Memory",
+    "problem": "The property Mesh.tangents allocates managed memory.",
+    "solution": "Use Mesh.GetTangents() instead."
+  },
+  {
+    "id": "UCA100072",
+    "type": "UnityEngine.Mesh",
+    "method": "uv",
+    "category": "Memory",
+    "problem": "The property Mesh.uv allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100073",
+    "type": "UnityEngine.Mesh",
+    "method": "uv1",
+    "category": "Memory",
+    "problem": "The property Mesh.uv1 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100074",
+    "type": "UnityEngine.Mesh",
+    "method": "uv2",
+    "category": "Memory",
+    "problem": "The property Mesh.uv2 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100075",
+    "type": "UnityEngine.Mesh",
+    "method": "uv3",
+    "category": "Memory",
+    "problem": "The property Mesh.uv3 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100076",
+    "type": "UnityEngine.Mesh",
+    "method": "uv4",
+    "category": "Memory",
+    "problem": "The property Mesh.uv4 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100077",
+    "type": "UnityEngine.Mesh",
+    "method": "uv5",
+    "category": "Memory",
+    "problem": "The property Mesh.uv5 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100078",
+    "type": "UnityEngine.Mesh",
+    "method": "uv6",
+    "category": "Memory",
+    "problem": "The property Mesh.uv6 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100079",
+    "type": "UnityEngine.Mesh",
+    "method": "uv7",
+    "category": "Memory",
+    "problem": "The property Mesh.uv7 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100080",
+    "type": "UnityEngine.Mesh",
+    "method": "uv8",
+    "category": "Memory",
+    "problem": "The property Mesh.uv8 allocates managed memory.",
+    "solution": "Use Mesh.GetUVs() instead."
+  },
+  {
+    "id": "UCA100081",
+    "type": "UnityEngine.Mesh",
+    "method": "colors",
+    "category": "Memory",
+    "problem": "The property Mesh.colors allocates managed memory.",
+    "solution": "Use Mesh.GetColors() instead."
+  },
+  {
+    "id": "UCA100082",
+    "type": "UnityEngine.Mesh",
+    "method": "colors32",
+    "category": "Memory",
+    "problem": "The property Mesh.colors32 allocates managed memory.",
+    "solution": "Use Mesh.GetColors() instead."
+  },
+  {
+    "id": "UCA100083",
+    "type": "UnityEngine.Mesh",
+    "method": "triangles",
+    "category": "Memory",
+    "problem": "The property Mesh.triangles allocates managed memory.",
+    "solution": "Use Mesh.GetTriangles() instead."
+  },
+  {
+    "id": "UCA100084",
+    "type": "UnityEngine.Renderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property Renderer.materials allocates managed memory.",
+    "solution": "Use Renderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100085",
+    "type": "UnityEngine.Renderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property Renderer.sharedMaterials allocates managed memory.",
+    "solution": "Use Renderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100086",
+    "type": "UnityEngine.TrailRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property TrailRenderer.materials allocates managed memory.",
+    "solution": "Use TrailRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100087",
+    "type": "UnityEngine.TrailRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property TrailRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use TrailRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100088",
+    "type": "UnityEngine.LineRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property LineRenderer.materials allocates managed memory.",
+    "solution": "Use LineRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100089",
+    "type": "UnityEngine.LineRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property LineRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use LineRenderer.GetShared() instead."
+  },
+  {
+    "id": "UCA100090",
+    "type": "UnityEngine.SkinnedMeshRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property SkinnedMeshRenderer.materials allocates managed memory.",
+    "solution": "Use SkinnedMeshRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100091",
+    "type": "UnityEngine.SkinnedMeshRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property SkinnedMeshRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use SkinnedMeshRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100092",
+    "type": "UnityEngine.MeshRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property MeshRenderer.materials allocates managed memory.",
+    "solution": "Use MeshRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100093",
+    "type": "UnityEngine.MeshRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property MeshRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use MeshRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100094",
+    "type": "UnityEngine.Input",
+    "method": "touches",
+    "category": "Memory",
+    "problem": "The property Input.touches allocates managed memory.",
+    "solution": "Use Input.GetTouch() instead."
+  },
+  {
+    "id": "UCA100095",
+    "type": "UnityEngine.Input",
+    "method": "accelerationEvents",
+    "category": "Memory",
+    "problem": "The property Input.accelerationEvents allocates managed memory.",
+    "solution": "Use Input.GetAccelerationEvent() instead."
+  },
+  {
+    "id": "UCA100096",
+    "type": "UnityEngine.iOS.NotificationServices",
+    "method": "localNotifications",
+    "category": "Memory",
+    "problem": "The property iOS.NotificationServices.localNotifications allocates managed memory.",
+    "solution": "Use iOS.NotificationServices.GetLocalNotification() instead."
+  },
+  {
+    "id": "UCA100097",
+    "type": "UnityEngine.iOS.NotificationServices",
+    "method": "remoteNotifications",
+    "category": "Memory",
+    "problem": "The property iOS.NotificationServices.remoteNotifications allocates managed memory.",
+    "solution": "Use iOS.NotificationServices.GetRemoteNotification() instead."
+  },
+  {
+    "id": "UCA100098",
+    "type": "UnityEngine.SpriteRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property SpriteRenderer.materials allocates managed memory.",
+    "solution": "Use SpriteRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100099",
+    "type": "UnityEngine.SpriteRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property SpriteRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use SpriteRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100100",
+    "type": "UnityEngine.GUISkin",
+    "method": "customStyles",
+    "category": "Memory",
+    "problem": "The property GUISkin.customStyles allocates managed memory.",
+    "solution": "Use GUISkin.GetStyle() or GUISkin.FindStyle() instead."
+  },
+  {
+    "id": "UCA100101",
+    "type": "UnityEngine.ParticleSystemRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property ParticleSystemRenderer.materials allocates managed memory.",
+    "solution": "Use ParticleSystemRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100102",
+    "type": "UnityEngine.ParticleSystemRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property ParticleSystemRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use ParticleSystemRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100103",
+    "type": "UnityEngine.Collision",
+    "method": "contacts",
+    "category": "Memory",
+    "problem": "The property Collision.contacts allocates managed memory.",
+    "solution": "Use Collision.GetContacts() instead."
+  },
+  {
+    "id": "UCA100104",
+    "type": "UnityEngine.Collision2D",
+    "method": "contacts",
+    "category": "Memory",
+    "problem": "The property Collision2D.contacts allocates managed memory.",
+    "solution": "Use Collision2D.GetContacts() instead."
+  },
+  {
+    "id": "UCA100105",
+    "type": "UnityEngine.SpriteMask",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property SpriteMask.materials allocates managed memory.",
+    "solution": "Use SpriteMask.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100106",
+    "type": "UnityEngine.SpriteMask",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property SpriteMask.sharedMaterials allocates managed memory.",
+    "solution": "Use SpriteMask.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100107",
+    "type": "UnityEngine.Experimental.U2D.SpriteShapeRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property Experimental.U2D.SpriteShapeRenderer.materials allocates managed memory.",
+    "solution": "Use Experimental.U2D.SpriteShapeRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100108",
+    "type": "UnityEngine.Experimental.U2D.SpriteShapeRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property Experimental.U2D.SpriteShapeRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use Experimental.U2D.SpriteShapeRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100109",
+    "type": "UnityEngine.ProceduralMaterial",
+    "method": "shaderKeywords",
+    "category": "Memory",
+    "problem": "The property ProceduralMaterial.shaderKeywords allocates managed memory.",
+    "solution": "Use ProceduralMaterial.EnableKeyword()/DisableKeyword() or IsKeywordEnable() instead."
+  },
+  {
+    "id": "UCA100110",
+    "type": "UnityEngine.TerrainData",
+    "method": "treeInstances",
+    "category": "Memory",
+    "problem": "The property TerrainData.treeInstances allocates managed memory.",
+    "solution": "Use TerrainData.GetTreeInstance() instead."
+  },
+  {
+    "id": "UCA100111",
+    "type": "UnityEngine.TerrainData",
+    "method": "alphamapTextures",
+    "category": "Memory",
+    "problem": "The property TerrainData.alphamapTextures allocates managed memory.",
+    "solution": "Use TerrainData.GetAlphamapTexture() instead."
+  },
+  {
+    "id": "UCA100112",
+    "type": "UnityEngine.Font",
+    "method": "characterInfo",
+    "category": "Memory",
+    "problem": "The property Font.characterInfo allocates managed memory.",
+    "solution": "Use Font.GetCharacterInfo() instead."
+  },
+  {
+    "id": "UCA100113",
+    "type": "UnityEngine.Tilemaps.TilemapRenderer",
+    "method": "materials",
+    "category": "Memory",
+    "problem": "The property Tilemaps.TilemapRenderer.materials allocates managed memory.",
+    "solution": "Use Tilemaps.TilemapRenderer.GetMaterials() instead."
+  },
+  {
+    "id": "UCA100114",
+    "type": "UnityEngine.Tilemaps.TilemapRenderer",
+    "method": "sharedMaterials",
+    "category": "Memory",
+    "problem": "The property Tilemaps.TilemapRenderer.sharedMaterials allocates managed memory.",
+    "solution": "Use Tilemaps.TilemapRenderer.GetSharedMaterials() instead."
+  },
+  {
+    "id": "UCA100115",
+    "type": "UnityEngine.Animator.GetCurrentAnimationClipState",
+    "method": "GetCurrentAnimationClipState",
+    "category": "Memory",
+    "problem": "Animator.GetCurrentAnimationClipState() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100116",
+    "type": "UnityEngine.Animator.GetBehaviours",
+    "method": "GetBehaviours",
+    "category": "Memory",
+    "problem": "Animator.GetBehaviours() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100117",
+    "type": "UnityEngine.AssetBundle",
+    "method": "LoadAssetWithSubAssets",
+    "category": "Memory",
+    "problem": "AssetBundle.LoadAssetWithSubAssets() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100118",
+    "type": "UnityEngine.AssetBundle",
+    "method": "LoadAllAssets",
+    "category": "Memory",
+    "problem": "AssetBundle.LoadAllAssets() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100119",
+    "type": "UnityEngine.AssetBundleManifest",
+    "method": "GetAllAssetBundles",
+    "category": "Memory",
+    "problem": "AssetBundleManifest.GetAllAssetBundles() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100120",
+    "type": "UnityEngine.Resources",
+    "method": "LoadAll",
+    "category": "Memory",
+    "problem": "Resources.LoadAll() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100121",
+    "type": "UnityEngine.Texture2D",
+    "method": "PackTextures",
+    "category": "Memory",
+    "problem": "Texture2D.PackTextures() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100122",
+    "type": "UnityEngine.Cubemap",
+    "method": "GetPixels",
+    "category": "Memory",
+    "problem": "Cubemap.GetPixels() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100123",
+    "type": "UnityEngine.Texture3D",
+    "method": "GetPixels",
+    "category": "Memory",
+    "problem": "Texture3D.GetPixels() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100124",
+    "type": "UnityEngine.Texture3D",
+    "method": "GetPixels32",
+    "category": "Memory",
+    "problem": "Texture3D.GetPixels32() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100125",
+    "type": "UnityEngine.Texture2DArray",
+    "method": "GetPixels",
+    "category": "Memory",
+    "problem": "Texture2DArray.GetPixels() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100126",
+    "type": "UnityEngine.Texture2DArray",
+    "method": "GetPixels32",
+    "category": "Memory",
+    "problem": "Texture2DArray.GetPixels32() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100127",
+    "type": "UnityEngine.CubemapArray",
+    "method": "GetPixels",
+    "category": "Memory",
+    "problem": "CubemapArray.GetPixels() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100128",
+    "type": "UnityEngine.CubemapArray",
+    "method": "GetPixels32",
+    "category": "Memory",
+    "problem": "CubemapArray.GetPixels32() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100129",
+    "type": "UnityEngine.Object",
+    "method": "FindObjectsOfType",
+    "category": "Memory",
+    "problem": "Object.FindObjectsOfType() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100130",
+    "type": "UnityEngine.Windows.Crypto",
+    "method": "ComputeMD5Hash",
+    "category": "Memory",
+    "problem": "Windows.Crypto.ComputeMD5Hash() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100131",
+    "type": "UnityEngine.Windows.File",
+    "method": "ReadAllBytes",
+    "category": "Memory",
+    "problem": "Windows.File.ReadAllBytes() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100132",
+    "type": "UnityEngine.ImageConversion",
+    "method": "EncodeToJPG",
+    "category": "Memory",
+    "problem": "ImageConversion.EncodeToJPG() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100133",
+    "type": "UnityEngine.ImageConversion",
+    "method": "EncodeToEXR",
+    "category": "Memory",
+    "problem": "ImageConversion.EncodeToEXR() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100134",
+    "type": "UnityEngine.ImageConversion",
+    "method": "EncodeToTGA",
+    "category": "Memory",
+    "problem": "ImageConversion.EncodeToTGA() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100135",
+    "type": "UnityEngine.ImageConversion",
+    "method": "EncodeToPNG",
+    "category": "Memory",
+    "problem": "ImageConversion.EncodeToPNG() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100136",
+    "type": "UnityEngine.Experimental.U2D.SpriteShapeUtility",
+    "method": "Generate",
+    "category": "Memory",
+    "problem": "Experimental.U2D.SpriteShapeUtility.Generate() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100137",
+    "type": "UnityEngine.ProceduralMaterial",
+    "method": "GetProceduralPropertyDescriptions",
+    "category": "Memory",
+    "problem": "ProceduralMaterial. GetProceduralPropertyDescriptions() allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100138",
+    "type": "UnityEngine.AI.NavMeshTriangulation",
+    "method": "layers",
+    "category": "Memory",
+    "problem": "The property AI.NavMeshTriangulation.layers allocates managed memory.",
+    "solution": "Try to avoid calling this method in frequently-updated code. Ideally, this method should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100139",
+    "type": "UnityEngine.AnimationClip",
+    "method": "events",
+    "category": "Memory",
+    "problem": "The property AnimationClip.events allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100140",
+    "type": "UnityEngine.AnimatorOverrideController",
+    "method": "animationClips",
+    "category": "Memory",
+    "problem": "The property AnimatorOverrideController.animationClips allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100141",
+    "type": "UnityEngine.HumanTrait",
+    "method": "MuscleName",
+    "category": "Memory",
+    "problem": "The property HumanTrait.MuscleName allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100142",
+    "type": "UnityEngine.HumanTrait",
+    "method": "BoneName",
+    "category": "Memory",
+    "problem": "The property HumanTrait.BoneName allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100143",
+    "type": "UnityEngine.RuntimeAnimatorController",
+    "method": "animationClips",
+    "category": "Memory",
+    "problem": "The property RuntimeAnimatorController.animationClips allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100144",
+    "type": "UnityEngine.AssetBundleRequest",
+    "method": "allAssets",
+    "category": "Memory",
+    "problem": "The property AssetBundleRequest.allAssets allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100145",
+    "type": "UnityEngine.Microphone",
+    "method": "devices",
+    "category": "Memory",
+    "problem": "The property Microphone.devices allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100146",
+    "type": "UnityEngine.WebCamDevice",
+    "method": "availableResolutions",
+    "category": "Memory",
+    "problem": "The property WebCamDevice.availableResolutions allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100147",
+    "type": "UnityEngine.WebCamTexture",
+    "method": "devices",
+    "category": "Memory",
+    "problem": "The property WebCamTexture.devices allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100148",
+    "type": "UnityEngine.Cloth",
+    "method": "vertices",
+    "category": "Memory",
+    "problem": "The property Cloth.vertices allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100149",
+    "type": "UnityEngine.Cloth",
+    "method": "normals",
+    "category": "Memory",
+    "problem": "The property Cloth.normals allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100150",
+    "type": "UnityEngine.Cloth",
+    "method": "coefficients",
+    "category": "Memory",
+    "problem": "The property Cloth.coefficients allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100151",
+    "type": "UnityEngine.Cloth",
+    "method": "capsuleColliders",
+    "category": "Memory",
+    "problem": "The property Cloth.capsuleColliders allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100152",
+    "type": "UnityEngine.Cloth",
+    "method": "sphereColliders",
+    "category": "Memory",
+    "problem": "The property Cloth.sphereColliders allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100153",
+    "type": "UnityEngine.Camera",
+    "method": "layerCullDistances",
+    "category": "Memory",
+    "problem": "The property Camera.layerCullDistances allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100154",
+    "type": "UnityEngine.CrashReport",
+    "method": "reports",
+    "category": "Memory",
+    "problem": "The property CrashReport.reports allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100155",
+    "type": "UnityEngine.Gradient",
+    "method": "colorKeys",
+    "category": "Memory",
+    "problem": "The property Gradient.colorKeys allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100156",
+    "type": "UnityEngine.Gradient",
+    "method": "alphaKeys",
+    "category": "Memory",
+    "problem": "The property Gradient.alphaKeys allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100157",
+    "type": "UnityEngine.Screen",
+    "method": "resolutions",
+    "category": "Memory",
+    "problem": "The property Screen.resolutions allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100158",
+    "type": "UnityEngine.LightmapSettings",
+    "method": "lightmaps",
+    "category": "Memory",
+    "problem": "The property LightmapSettings.lightmaps allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100159",
+    "type": "UnityEngine.LightProbes",
+    "method": "positions",
+    "category": "Memory",
+    "problem": "The property LightProbes.positions allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100160",
+    "type": "UnityEngine.LightProbes",
+    "method": "bakedProbes",
+    "category": "Memory",
+    "problem": "The property LightProbes.bakedProbes allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100161",
+    "type": "UnityEngine.LightProbes",
+    "method": "coefficients",
+    "category": "Memory",
+    "problem": "The property LightProbes.coefficients allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100162",
+    "type": "UnityEngine.QualitySettings",
+    "method": "names",
+    "category": "Memory",
+    "problem": "The property QualitySettings.names allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100163",
+    "type": "UnityEngine.Material",
+    "method": "shaderKeywords",
+    "category": "Memory",
+    "problem": "The property Material.shaderKeywords allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100164",
+    "type": "UnityEngine.Light",
+    "method": "layerShadowCullDistances",
+    "category": "Memory",
+    "problem": "The property Light.layerShadowCullDistances allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100165",
+    "type": "UnityEngine.Rendering.RenderTargetBinding",
+    "method": "colorRenderTargets",
+    "category": "Memory",
+    "problem": "The property Rendering.RenderTargetBinding.colorRenderTargets allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100166",
+    "type": "UnityEngine.Rendering.RenderTargetBinding",
+    "method": "colorLoadActions",
+    "category": "Memory",
+    "problem": "The property Rendering.RenderTargetBinding.colorLoadActions allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100167",
+    "type": "UnityEngine.Rendering.RenderTargetBinding",
+    "method": "colorStoreActions",
+    "category": "Memory",
+    "problem": "The property Rendering.RenderTargetBinding.colorStoreActions allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100168",
+    "type": "UnityEngine.SkinnedMeshRenderer",
+    "method": "bones",
+    "category": "Memory",
+    "problem": "The property SkinnedMeshRenderer.bones allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100169",
+    "type": "UnityEngine.LightProbeGroup",
+    "method": "probePositions",
+    "category": "Memory",
+    "problem": "The property LightProbeGroup.probePositions allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100170",
+    "type": "UnityEngine.Network",
+    "method": "connections",
+    "category": "Memory",
+    "problem": "The property Network.connections allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100171",
+    "type": "UnityEngine.HostData",
+    "method": "ip",
+    "category": "Memory",
+    "problem": "The property HostData.ip allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100172",
+    "type": "UnityEngine.SortingLayer",
+    "method": "layers",
+    "category": "Memory",
+    "problem": "The property SortingLayer.layers allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100173",
+    "type": "UnityEngine.TextAsset",
+    "method": "bytes",
+    "category": "Memory",
+    "problem": "The property TextAsset.bytes allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100174",
+    "type": "UnityEngine.Experimental.Rendering.RenderPass",
+    "method": "colorAttachments",
+    "category": "Memory",
+    "problem": "The property Experimental.Rendering.RenderPass.colorAttachments allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100175",
+    "type": "UnityEngine.iOS.NotificationServices",
+    "method": "deviceToken",
+    "category": "Memory",
+    "problem": "The property iOS.NotificationServices.deviceToken allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100176",
+    "type": "UnityEngine.iOS.NotificationServices",
+    "method": "scheduledLocalNotifications",
+    "category": "Memory",
+    "problem": "The property iOS.NotificationServices.scheduledLocalNotifications allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100177",
+    "type": "UnityEngine.Sprite",
+    "method": "vertices",
+    "category": "Memory",
+    "problem": "The property Sprite.vertices allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100178",
+    "type": "UnityEngine.Sprite",
+    "method": "triangles",
+    "category": "Memory",
+    "problem": "The property Sprite.triangles allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100179",
+    "type": "UnityEngine.Sprite",
+    "method": "uv",
+    "category": "Memory",
+    "problem": "The property Sprite.uv allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100180",
+    "type": "UnityEngine.SocialPlatforms.ILocalUser",
+    "method": "friends",
+    "category": "Memory",
+    "problem": "The property SocialPlatforms.ILocalUser.friends allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100181",
+    "type": "UnityEngine.SocialPlatforms.ILeaderboard",
+    "method": "scores",
+    "category": "Memory",
+    "problem": "The property SocialPlatforms.ILeaderboard.scores allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100182",
+    "type": "UnityEngine.GUIStyleState",
+    "method": "scaledBackgrounds",
+    "category": "Memory",
+    "problem": "The property GUIStyleState.scaledBackgrounds allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100183",
+    "type": "UnityEngine.EdgeCollider2D",
+    "method": "points",
+    "category": "Memory",
+    "problem": "The property EdgeCollider2D.points allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100184",
+    "type": "UnityEngine.PolygonCollider2D",
+    "method": "points",
+    "category": "Memory",
+    "problem": "The property PolygonCollider2D.points allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100185",
+    "type": "UnityEngine.Terrain",
+    "method": "activeTerrains",
+    "category": "Memory",
+    "problem": "The property Terrain.activeTerrains allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100186",
+    "type": "UnityEngine.TerrainData",
+    "method": "detailPrototypes",
+    "category": "Memory",
+    "problem": "The property TerrainData.detailPrototypes allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100187",
+    "type": "UnityEngine.TerrainData",
+    "method": "treePrototypes",
+    "category": "Memory",
+    "problem": "The property TerrainData.treePrototypes allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100188",
+    "type": "UnityEngine.TerrainData",
+    "method": "splatPrototypes",
+    "category": "Memory",
+    "problem": "The property TerrainData.splatPrototypes allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100189",
+    "type": "UnityEngine.TerrainData",
+    "method": "terrainLayers",
+    "category": "Memory",
+    "problem": "The property TerrainData.terrainLayers allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100190",
+    "type": "UnityEngine.Tilemaps.TileAnimationData.animatedSprites",
+    "method": "animatedSprites",
+    "category": "Memory",
+    "problem": "The property Tilemaps.TileAnimationData.animatedSprites allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100191",
+    "type": "UnityEngine.Experimental.UIElements.UxmlAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100192",
+    "type": "UnityEngine.Experimental.UIElements.UxmlStringAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlStringAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100193",
+    "type": "UnityEngine.Experimental.UIElements.UxmlFloatAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlFloatAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100194",
+    "type": "UnityEngine.Experimental.UIElements.UxmlDoubleAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlDoubleAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100195",
+    "type": "UnityEngine.Experimental.UIElements.UxmlIntAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlIntAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100196",
+    "type": "UnityEngine.Experimental.UIElements.UxmlLongAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlLongAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100197",
+    "type": "UnityEngine.Experimental.UIElements.UxmlBoolAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlBoolAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100198",
+    "type": "UnityEngine.Experimental.UIElements.UxmlColorAttributeDescription.obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlColorAttributeDescription.obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100199",
+    "type": "UnityEngine.Experimental.UIElements.UxmlEnumAttributeDescription`1[T].obsoleteNames",
+    "method": "obsoleteNames",
+    "category": "Memory",
+    "problem": "The property Experimental.UIElements.UxmlEnumAttributeDescription`1[T].obsoleteNames allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100200",
+    "type": "UnityEngine.Networking.IMultipartFormSection.sectionData",
+    "method": "sectionData",
+    "category": "Memory",
+    "problem": "The property Networking.IMultipartFormSection.sectionData allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100201",
+    "type": "UnityEngine.Networking.MultipartFormDataSection.sectionData",
+    "method": "sectionData",
+    "category": "Memory",
+    "problem": "The property Networking.MultipartFormDataSection.sectionData allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100202",
+    "type": "UnityEngine.Networking.MultipartFormFileSection.sectionData",
+    "method": "sectionData",
+    "category": "Memory",
+    "problem": "The property Networking.MultipartFormFileSection.sectionData allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100203",
+    "type": "UnityEngine.WWWForm.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property WWWForm.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100204",
+    "type": "UnityEngine.Networking.DownloadHandler.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandler.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100205",
+    "type": "UnityEngine.Networking.DownloadHandlerBuffer.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerBuffer.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100206",
+    "type": "UnityEngine.Networking.DownloadHandlerScript.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerScript.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100207",
+    "type": "UnityEngine.Networking.DownloadHandlerFile.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerFile.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100208",
+    "type": "UnityEngine.Networking.UploadHandler.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.UploadHandler.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100209",
+    "type": "UnityEngine.Networking.UploadHandlerRaw.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.UploadHandlerRaw.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100210",
+    "type": "UnityEngine.Networking.UploadHandlerFile.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.UploadHandlerFile.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100211",
+    "type": "UnityEngine.Networking.DownloadHandlerAssetBundle.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerAssetBundle.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100212",
+    "type": "UnityEngine.Networking.DownloadHandlerAudioClip.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerAudioClip.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100213",
+    "type": "UnityEngine.Networking.DownloadHandlerMovieTexture.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerMovieTexture.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100214",
+    "type": "UnityEngine.Networking.DownloadHandlerTexture.data",
+    "method": "data",
+    "category": "Memory",
+    "problem": "The property Networking.DownloadHandlerTexture.data allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100215",
+    "type": "UnityEngine.Networking.NetworkMigrationManager.peers",
+    "method": "peers",
+    "category": "Memory",
+    "problem": "The property Networking.NetworkMigrationManager.peers allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100216",
+    "type": "UnityEngine.Networking.NetworkServerSimple.messageBuffer",
+    "method": "messageBuffer",
+    "category": "Memory",
+    "problem": "The property Networking.NetworkServerSimple.messageBuffer allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100217",
+    "type": "UnityEngine.WWW.bytes",
+    "method": "bytes",
+    "category": "Memory",
+    "problem": "The property WWW.bytes allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100218",
+    "type": "UnityEngine.VR.VRSettings.supportedDevices",
+    "method": "supportedDevices",
+    "category": "Memory",
+    "problem": "The property VR.VRSettings.supportedDevices allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100219",
+    "type": "UnityEngine.XR.XRSettings.supportedDevices",
+    "method": "supportedDevices",
+    "category": "Memory",
+    "problem": "The property XR.XRSettings.supportedDevices allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100220",
+    "type": "UnityEngine.TestTools.Constraints.AllocatingGCMemoryConstraint.Arguments",
+    "method": "Arguments",
+    "category": "Memory",
+    "problem": "The property TestTools.Constraints.AllocatingGCMemoryConstraint.Arguments allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100221",
+    "type": "UnityEngine.TestTools.UnityPlatformAttribute.include",
+    "method": "include",
+    "category": "Memory",
+    "problem": "The property TestTools.UnityPlatformAttribute.include allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100222",
+    "type": "UnityEngine.TestTools.UnityPlatformAttribute.exclude",
+    "method": "exclude",
+    "category": "Memory",
+    "problem": "The property TestTools.UnityPlatformAttribute.exclude allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Ideally, this property should only be used during initialisation, and the results should be cached if they need to be re-used."
+  },
+  {
+    "id": "UCA100223",
+    "type": "UnityEngine.GameObject",
+    "method": "tag",
+    "category": "Memory",
+    "problem": "The GameObject.tag property allocates managed memory.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Prefer using GameObject.CompareTag() instead, as this does not result in managed allocations."
+  },
+  {
+    "id": "UCA100224",
+    "type": "UnityEngine.Object",
+    "method": "Instantiate",
+    "category": "CPU",
+    "problem": "Instantiationg Objects at runtime can be a very expensive operation.",
+    "solution": "Try to avoid calling Object.Instantiate frequently-updated code."
+  },
+  {
+    "id": "UCA100225",
+    "type": "UnityEngine.GameObject",
+    "method": "AddComponent",
+    "category": "CPU",
+    "problem": "Adding components to GameObjects at runtime can be a very expensive operation.",
+    "solution": "Try to avoid getting this property in frequently-updated code. Prefer instantiating GameObjects from Prefabs will all the necessary components instead."
+  },
+  {
+    "id": "UCA100226",
+    "type": "System.String",
+    "method": "Concat",
+    "category": "Memory",
+    "problem": "String concatenation operations allocates managed memory",
+    "solution": "Try to avoid concatenating strings in frequently-updated code. Prefer using a StringBuilder instead, as this minimizes managed allocations."
+  },
+  {
+    "id": "UCA200001",
+    "type": "Empty MonoBehaviour Method",
+    "method": "",
+    "category": "CPU",
+    "problem": "Any empty MonoBehaviour magic method will be included in the build and executed anyway.",
+    "solution": "Remove any empty MonoBehaviour methods."
+  },
+  {
+    "id": "W011",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "A syntax error.",
+    "solution": ""
+  },
+  {
+    "id": "W021",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An invalid inline option.",
+    "solution": ""
+  },
+  {
+    "id": "W022",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An unpaired inline push directive.",
+    "solution": ""
+  },
+  {
+    "id": "W023",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An unpaired inline pop directive.",
+    "solution": ""
+  },
+  {
+    "id": "W111",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Setting an undefined global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W112",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Mutating an undefined global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W113",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Accessing an undefined global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W121",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Setting a read-only global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W122",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Setting a read-only field of a global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W131",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Unused implicitly defined global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W142",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Setting an undefined field of a global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W143",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Accessing an undefined field of a global variable.",
+    "solution": ""
+  },
+  {
+    "id": "W211",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Unused local variable.",
+    "solution": ""
+  },
+  {
+    "id": "W212",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Unused argument.",
+    "solution": ""
+  },
+  {
+    "id": "W213",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Unused loop variable.",
+    "solution": ""
+  },
+  {
+    "id": "W221",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Local variable is accessed but never set.",
+    "solution": ""
+  },
+  {
+    "id": "W231",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Local variable is set but never accessed.",
+    "solution": ""
+  },
+  {
+    "id": "W232",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An argument is set but never accessed.",
+    "solution": ""
+  },
+  {
+    "id": "W233",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Loop variable is set but never accessed.",
+    "solution": ""
+  },
+  {
+    "id": "W241",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Local variable is mutated but never accessed.",
+    "solution": ""
+  },
+  {
+    "id": "W311",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Value assigned to a local variable is unused.",
+    "solution": ""
+  },
+  {
+    "id": "W312",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Value of an argument is unused.",
+    "solution": ""
+  },
+  {
+    "id": "W313",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Value of a loop variable is unused.",
+    "solution": ""
+  },
+  {
+    "id": "W314",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Value of a field in a table literal is unused.",
+    "solution": ""
+  },
+  {
+    "id": "W321",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Accessing uninitialized local variable.",
+    "solution": ""
+  },
+  {
+    "id": "W331",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Value assigned to a local variable is mutated but never accessed.",
+    "solution": ""
+  },
+  {
+    "id": "W341",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Mutating uninitialized local variable.",
+    "solution": ""
+  },
+  {
+    "id": "W411",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Redefining a local variable.",
+    "solution": ""
+  },
+  {
+    "id": "W412",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Redefining an argument.",
+    "solution": ""
+  },
+  {
+    "id": "W413",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Redefining a loop variable.",
+    "solution": ""
+  },
+  {
+    "id": "W421",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Shadowing a local variable.",
+    "solution": ""
+  },
+  {
+    "id": "W422",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Shadowing an argument.",
+    "solution": ""
+  },
+  {
+    "id": "W423",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Shadowing a loop variable.",
+    "solution": ""
+  },
+  {
+    "id": "W431",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Shadowing an upvalue.",
+    "solution": ""
+  },
+  {
+    "id": "W432",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Shadowing an upvalue argument.",
+    "solution": ""
+  },
+  {
+    "id": "W433",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Shadowing an upvalue loop variable.",
+    "solution": ""
+  },
+  {
+    "id": "W511",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Unreachable code.",
+    "solution": ""
+  },
+  {
+    "id": "W512",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Loop can be executed at most once.",
+    "solution": ""
+  },
+  {
+    "id": "W521",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Unused label.",
+    "solution": ""
+  },
+  {
+    "id": "W531",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Left-hand side of an assignment is too short.",
+    "solution": ""
+  },
+  {
+    "id": "W532",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Left-hand side of an assignment is too long.",
+    "solution": ""
+  },
+  {
+    "id": "W541",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An empty do end block.",
+    "solution": ""
+  },
+  {
+    "id": "W542",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An empty if branch.",
+    "solution": ""
+  },
+  {
+    "id": "W551",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "An empty statement.",
+    "solution": ""
+  },
+  {
+    "id": "W561",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Cyclomatic complexity of a function is too high.",
+    "solution": ""
+  },
+  {
+    "id": "W571",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "A numeric for loop goes from #(expr) down to 1 or less without negative step.",
+    "solution": ""
+  },
+  {
+    "id": "W611",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "A line consists of nothing but whitespace.",
+    "solution": ""
+  },
+  {
+    "id": "W612",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "A line contains trailing whitespace.",
+    "solution": ""
+  },
+  {
+    "id": "W613",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Trailing whitespace in a string.",
+    "solution": ""
+  },
+  {
+    "id": "W614",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Trailing whitespace in a comment.",
+    "solution": ""
+  },
+  {
+    "id": "W621",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Inconsistent indentation (SPACE followed by TAB).",
+    "solution": ""
+  },
+  {
+    "id": "W631",
+    "type": "Warning",
+    "method": "",
+    "category": "Lua",
+    "problem": "Line is too long.",
+    "solution": ""
+  },
+  {
+    "id": "E404",
+    "type": "Error",
+    "method": "",
+    "category": "Lua",
+    "problem": "Lua script error",
+    "solution": ""
+  }
+]

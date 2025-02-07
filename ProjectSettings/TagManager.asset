@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - UIProperty
+  - FreeBuild_Plane
+  - FreeBuild_Unit
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Flat
+  - Basin
+  - Plain
+  - Item
+  - Target2D
+  - Decoration
+  - Robot
+  - RobotIgnore
+  - Ice
+  - Barrier
+  - RoadLine
+  - RoadFlag
+  - FreeBuild_Unit
+  - NPC
+  - AirWall
+  - Building
+  - DontColliderWithCamera
+  - Axis
+  - FreeBuild_Plane
+  - FreeBuild_Gizmo
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
