@@ -1,0 +1,263 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@arrow1-name: 'arrow1';
+@arrow1-x: 0px;
+@arrow1-y: 0px;
+@arrow1-offset-x: 0px;
+@arrow1-offset-y: 0px;
+@arrow1-width: 11px;
+@arrow1-height: 14px;
+@arrow1-total-width: 212px;
+@arrow1-total-height: 560px;
+@arrow1-image: '../../assets/images/sprite.png';
+@arrow1: 0px 0px 0px 0px 11px 14px 212px 560px '../../assets/images/sprite.png' 'arrow1';
+@arrow2-name: 'arrow2';
+@arrow2-x: 0px;
+@arrow2-y: 18px;
+@arrow2-offset-x: 0px;
+@arrow2-offset-y: -18px;
+@arrow2-width: 10px;
+@arrow2-height: 14px;
+@arrow2-total-width: 212px;
+@arrow2-total-height: 560px;
+@arrow2-image: '../../assets/images/sprite.png';
+@arrow2: 0px 18px 0px -18px 10px 14px 212px 560px '../../assets/images/sprite.png' 'arrow2';
+@panle-name: 'panle';
+@panle-x: 0px;
+@panle-y: 36px;
+@panle-offset-x: 0px;
+@panle-offset-y: -36px;
+@panle-width: 15px;
+@panle-height: 14px;
+@panle-total-width: 212px;
+@panle-total-height: 560px;
+@panle-image: '../../assets/images/sprite.png';
+@panle: 0px 36px 0px -36px 15px 14px 212px 560px '../../assets/images/sprite.png' 'panle';
+@notice-name: 'notice';
+@notice-x: 0px;
+@notice-y: 54px;
+@notice-offset-x: 0px;
+@notice-offset-y: -54px;
+@notice-width: 18px;
+@notice-height: 16px;
+@notice-total-width: 212px;
+@notice-total-height: 560px;
+@notice-image: '../../assets/images/sprite.png';
+@notice: 0px 54px 0px -54px 18px 16px 212px 560px '../../assets/images/sprite.png' 'notice';
+@expand-open-hover-name: 'expand-open-hover';
+@expand-open-hover-x: 0px;
+@expand-open-hover-y: 74px;
+@expand-open-hover-offset-x: 0px;
+@expand-open-hover-offset-y: -74px;
+@expand-open-hover-width: 20px;
+@expand-open-hover-height: 20px;
+@expand-open-hover-total-width: 212px;
+@expand-open-hover-total-height: 560px;
+@expand-open-hover-image: '../../assets/images/sprite.png';
+@expand-open-hover: 0px 74px 0px -74px 20px 20px 212px 560px '../../assets/images/sprite.png' 'expand-open-hover';
+@expand-open-name: 'expand-open';
+@expand-open-x: 0px;
+@expand-open-y: 98px;
+@expand-open-offset-x: 0px;
+@expand-open-offset-y: -98px;
+@expand-open-width: 20px;
+@expand-open-height: 20px;
+@expand-open-total-width: 212px;
+@expand-open-total-height: 560px;
+@expand-open-image: '../../assets/images/sprite.png';
+@expand-open: 0px 98px 0px -98px 20px 20px 212px 560px '../../assets/images/sprite.png' 'expand-open';
+@arrow-name: 'arrow';
+@arrow-x: 0px;
+@arrow-y: 122px;
+@arrow-offset-x: 0px;
+@arrow-offset-y: -122px;
+@arrow-width: 25px;
+@arrow-height: 25px;
+@arrow-total-width: 212px;
+@arrow-total-height: 560px;
+@arrow-image: '../../assets/images/sprite.png';
+@arrow: 0px 122px 0px -122px 25px 25px 212px 560px '../../assets/images/sprite.png' 'arrow';
+@gou-name: 'gou';
+@gou-x: 0px;
+@gou-y: 151px;
+@gou-offset-x: 0px;
+@gou-offset-y: -151px;
+@gou-width: 29px;
+@gou-height: 26px;
+@gou-total-width: 212px;
+@gou-total-height: 560px;
+@gou-image: '../../assets/images/sprite.png';
+@gou: 0px 151px 0px -151px 29px 26px 212px 560px '../../assets/images/sprite.png' 'gou';
+@expand-default-hover-name: 'expand-default-hover';
+@expand-default-hover-x: 0px;
+@expand-default-hover-y: 181px;
+@expand-default-hover-offset-x: 0px;
+@expand-default-hover-offset-y: -181px;
+@expand-default-hover-width: 31px;
+@expand-default-hover-height: 28px;
+@expand-default-hover-total-width: 212px;
+@expand-default-hover-total-height: 560px;
+@expand-default-hover-image: '../../assets/images/sprite.png';
+@expand-default-hover: 0px 181px 0px -181px 31px 28px 212px 560px '../../assets/images/sprite.png' 'expand-default-hover';
+@expand-default-name: 'expand-default';
+@expand-default-x: 0px;
+@expand-default-y: 213px;
+@expand-default-offset-x: 0px;
+@expand-default-offset-y: -213px;
+@expand-default-width: 31px;
+@expand-default-height: 28px;
+@expand-default-total-width: 212px;
+@expand-default-total-height: 560px;
+@expand-default-image: '../../assets/images/sprite.png';
+@expand-default: 0px 213px 0px -213px 31px 28px 212px 560px '../../assets/images/sprite.png' 'expand-default';
+@triangle-name: 'triangle';
+@triangle-x: 0px;
+@triangle-y: 245px;
+@triangle-offset-x: 0px;
+@triangle-offset-y: -245px;
+@triangle-width: 25px;
+@triangle-height: 29px;
+@triangle-total-width: 212px;
+@triangle-total-height: 560px;
+@triangle-image: '../../assets/images/sprite.png';
+@triangle: 0px 245px 0px -245px 25px 29px 212px 560px '../../assets/images/sprite.png' 'triangle';
+@icon-xiushi-name: 'icon-xiushi';
+@icon-xiushi-x: 0px;
+@icon-xiushi-y: 278px;
+@icon-xiushi-offset-x: 0px;
+@icon-xiushi-offset-y: -278px;
+@icon-xiushi-width: 30px;
+@icon-xiushi-height: 30px;
+@icon-xiushi-total-width: 212px;
+@icon-xiushi-total-height: 560px;
+@icon-xiushi-image: '../../assets/images/sprite.png';
+@icon-xiushi: 0px 278px 0px -278px 30px 30px 212px 560px '../../assets/images/sprite.png' 'icon-xiushi';
+@select-bg-name: 'select-bg';
+@select-bg-x: 0px;
+@select-bg-y: 312px;
+@select-bg-offset-x: 0px;
+@select-bg-offset-y: -312px;
+@select-bg-width: 190px;
+@select-bg-height: 30px;
+@select-bg-total-width: 212px;
+@select-bg-total-height: 560px;
+@select-bg-image: '../../assets/images/sprite.png';
+@select-bg: 0px 312px 0px -312px 190px 30px 212px 560px '../../assets/images/sprite.png' 'select-bg';
+@empty1-name: 'empty1';
+@empty1-x: 0px;
+@empty1-y: 346px;
+@empty1-offset-x: 0px;
+@empty1-offset-y: -346px;
+@empty1-width: 38px;
+@empty1-height: 62px;
+@empty1-total-width: 212px;
+@empty1-total-height: 560px;
+@empty1-image: '../../assets/images/sprite.png';
+@empty1: 0px 346px 0px -346px 38px 62px 212px 560px '../../assets/images/sprite.png' 'empty1';
+@title-bg-name: 'title-bg';
+@title-bg-x: 0px;
+@title-bg-y: 412px;
+@title-bg-offset-x: 0px;
+@title-bg-offset-y: -412px;
+@title-bg-width: 212px;
+@title-bg-height: 64px;
+@title-bg-total-width: 212px;
+@title-bg-total-height: 560px;
+@title-bg-image: '../../assets/images/sprite.png';
+@title-bg: 0px 412px 0px -412px 212px 64px 212px 560px '../../assets/images/sprite.png' 'title-bg';
+@close-name: 'close';
+@close-x: 0px;
+@close-y: 480px;
+@close-offset-x: 0px;
+@close-offset-y: -480px;
+@close-width: 85px;
+@close-height: 80px;
+@close-total-width: 212px;
+@close-total-height: 560px;
+@close-image: '../../assets/images/sprite.png';
+@close: 0px 480px 0px -480px 85px 80px 212px 560px '../../assets/images/sprite.png' 'close';
+@spritesheet-width: 212px;
+@spritesheet-height: 560px;
+@spritesheet-image: '../../assets/images/sprite.png';
+@spritesheet-sprites: @arrow1 @arrow2 @panle @notice @expand-open-hover @expand-open @arrow @gou @expand-default-hover @expand-default @triangle @icon-xiushi @select-bg @empty1 @title-bg @close;
+@spritesheet: 212px 560px '../../assets/images/sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  background-image: e(%('url(%a)', e(@sprite-image)));
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}

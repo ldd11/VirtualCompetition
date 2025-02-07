@@ -1,0 +1,52 @@
+<xml>
+  <category name="机器学习" colour="#3bd6ff" icon="learn" extensionId="machineLearning">
+    <label text="机器学习"></label>
+    <button text="添加机器学习算法模型" callbackKey="openTMProjectList"></button>
+    <block type="startTMPredictImage">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+    </block>
+    <block type="getTMPredictImageResult">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+    </block>
+    <block type="getTMPredictImageResultProbability">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+    </block>
+    <block type="checkTMPredictImageResultBool">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+        <field name="class_type">?</field>
+    </block>
+    <block type="startTMPredictAudio">
+        <field name="model_type">?</field>
+    </block>
+    <block type="getTMPredictAudioResult">
+        <field name="model_type">?</field>
+    </block>
+    <block type="getTMPredictAudioResultProbability">
+        <field name="model_type">?</field>
+    </block>
+    <block type="checkTMPredictAudioResultBool">
+        <field name="model_type">?</field>
+        <field name="class_type">?</field>
+    </block>
+    <block type="startTMPredictPose">
+        <field name="model_type">?</field>
+    </block>
+    <block type="getTMPredictPoseResult">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+    </block>
+    <block type="getTMPredictPoseResultProbability">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+    </block>
+    <block type="checkTMPredictPoseResultBool">
+        <field name="model_type">?</field>
+        <field name="image_type">Usb</field>
+        <field name="class_type">?</field>
+    </block>
+  </category>
+</xml>

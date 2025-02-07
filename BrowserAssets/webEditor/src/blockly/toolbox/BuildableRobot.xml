@@ -1,0 +1,270 @@
+<category name="执行器" colour="#d061bc" icon="sensor">
+    <label text="执行器"></label>
+    <label text="LCD显示屏"></label>
+    <block type="setLCDBackground" />
+    <block type="LCDClear" />
+    <block type="setLCDFont" />
+    <block type="rotateLCDFont" />
+    <block type="LCDPrint">
+      <value name="content">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="LCDPrintln">
+      <value name="content">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <!-- <block type="LCDSetBgColor">
+        <field name="COLOR">yellow</field>
+    </block>
+    <block type="LCDSetFontSize" /> -->
+    <!-- <block type="LCDShowStringOnNthLine">
+        <value name="str">
+            <shadow type="text">
+                <field name="TEXT">hello</field>
+            </shadow>
+        </value>
+    </block> -->
+    <label text="LED彩灯"></label>
+    <block type="LEDSetColor" />
+    <block type="LEDSetColorWithSecond">
+        <value name="SEC">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="LEDSetRgb">
+        <value name="R">
+            <shadow type="rgbParam">
+                <field name="NUM">255</field>
+            </shadow>
+        </value>
+        <value name="G">
+            <shadow type="rgbParam">
+                <field name="NUM">255</field>
+            </shadow>
+        </value>
+        <value name="B">
+            <shadow type="rgbParam">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="LEDSetRgbWithSecond">
+        <value name="R">
+            <shadow type="rgbParam">
+                <field name="NUM">255</field>
+            </shadow>
+        </value>
+        <value name="G">
+            <shadow type="rgbParam">
+                <field name="NUM">255</field>
+            </shadow>
+        </value>
+        <value name="B">
+            <shadow type="rgbParam">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="SEC">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="LEDAddBrightness">
+        <value name="brightness">
+            <shadow type="brightnessParam2">
+                <field name="NUM">10</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="LEDSetBrightness">
+        <value name="brightness">
+            <shadow type="brightnessParam1">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="LEDGetBrightness" />
+    <label text="机械臂"></label>
+    <block type="moveArmPincher">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+        <value name="z">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+        <value name="y">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+    </block>
+</category>
+<category name="传感器" colour="#3bd6ff" icon="wifi">
+    <label text="传感器"></label>
+    <label text="三轴陀螺仪"></label>
+    <block type="getGyroscopeValue" />
+    <label text="温度传感器"></label>
+    <block type="getTemperatureValue" />
+    <label text="光线传感器"></label>
+    <block type="getLightValue" />
+    <label text="湿度传感器"></label>
+    <block type="getHumidityValue" />
+    <label text="GPS传感器"></label>
+    <block type="getGPSValue" />
+    <label text="红外测距传感器"></label>
+    <block type="getInfraredValue" />
+    <label text="二氧化碳传感器"></label>
+    <block type="getCO2Value" />
+    <label text="二氧化硫传感器"></label>
+    <block type="getSO2Value" />
+    <label text="噪声传感器"></label>
+    <block type="getNoiseValue" />
+</category>
+<category name="动力装置" colour="#a568f0" icon="debug">
+    <label text="动力装置"></label>
+    <label text="编码电机"></label>
+    <block type="MotorRotate">
+        <value name="RPM">
+            <shadow type="motorParam1">
+                <field name="NUM">60</field>
+            </shadow>
+        </value>
+    </block>
+    <label text="动力轮"></label>
+    <block type="WHEEL_POWER">
+        <value name="RPM">
+            <shadow type="motorParam2">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+    </block>
+    <label text="涵道风扇"></label>
+    <block type="DuctedFanOutputPower">
+        <value name="power">
+            <shadow type="motorParam1">
+                <field name="NUM">10</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="DuctedFanSetOutputPowerAngle">
+        <value name="pitch_angle">
+            <shadow type="ductedFanAngleParam">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="roll_angle">
+            <shadow type="ductedFanAngleParam">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <label text="舵机"></label>
+    <block type="ServoRotateTo">
+        <value name="targetAngle">
+            <shadow type="servoAngleParam">
+                <field name="NUM">90</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="ServoRotate">
+      <value name="targetAngle">
+          <shadow type="servoAngleParam2">
+              <field name="NUM">30</field>
+          </shadow>
+      </value>
+  </block>
+    <block type="GetServoRotation">
+    </block>
+</category>
+<category name="图像智能" colour="#ff6464" icon="imgdetection">
+    <label text="图像智能"></label>
+    <block type="setSensorOn"></block>
+    <block type="getRecognizedTrafficLightCount"></block>
+    <block type="getRecognizedTrafficLightInfoOfText">
+        <value name="light_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficLightInfoOfNumber">
+        <value name="light_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedHumanCount"></block>
+    <block type="getRecognizedHumanName">
+        <value name="human_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedHumanInfo">
+        <value name="human_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRoadRecognizeColor"></block>
+    <block type="getRecognizedRoadLineCount"></block>
+    <block type="isRecognizeRoadLineType"></block>
+    <block type="getRecognizedRoadLineInfo">
+        <value name="line_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="point_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficSignCount"></block>
+    <block type="getRecognizedTrafficSignInfoOfText">
+        <value name="sign_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficSignInfoOfNumber">
+        <value name="sign_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedItemCount"></block>
+    <block type="getRecognizedItemName">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedItemInfo">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+  </category>

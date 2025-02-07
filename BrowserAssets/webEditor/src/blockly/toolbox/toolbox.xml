@@ -1,0 +1,533 @@
+<xml>
+  <category name="调试积木" hidden="true" colour="#69c12e" icon="debugging">
+    <label text="调试积木"></label>
+    <label text="1、调试积木仅支持在【调试】模式下执行相关程序内容;" web-class="debugDetail" width="320" height="45"></label>
+    <label text="2、【调试】模式下无法提交赛事成绩;" web-class="debugDetail secondDetail" width="320" height="45"></label>
+    <!-- setRobotInitialPosBegin -->
+    <block type="setRobotInitialPos">
+        <value name="x">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+            <block type="posValueOfDebug">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="y">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+            <block type="posValueOfDebug">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="angle">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <!-- setRobotInitialPosEnd -->
+    <!-- setRobotDroneInitialPosBegin -->
+    <block type="setRobotDroneInitialPos">
+        <value name="x">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+            <block type="posValueOfDebug">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="y">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+            <block type="posValueOfDebug">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="z">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+            <block type="posValueOfDebug">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="angle">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <!-- setRobotDroneInitialPosEnd -->
+  </category>
+  <category name="事件" colour="#3bd6ff" icon="microbit">
+    <label text="事件"></label>
+    <block type="funcMain" />
+    <block type="onRecvBroadcast">
+      <value name="msg">
+        <shadow type="text">
+          <field name="TEXT">Hi</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="sendBroadcast">
+      <value name="msg">
+        <shadow type="text">
+          <field name="TEXT">Hi</field>
+        </shadow>
+      </value>
+    </block>
+    <!-- <block type="print">
+      <value name="msg">
+        <shadow type="text">
+          <field name="TEXT">Hi</field>
+        </shadow>
+      </value>
+    </block> -->
+  </category>
+  <category name="控制" colour="#a568f0" icon="control">
+    <label text="控制"></label>
+    <block type="repeatDo"></block>
+    <block type="repeatDoTimes">
+      <value name="times">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controlBreak"></block>
+    <block type="controlIf"></block>
+    <block type="controls_if_no_else"></block>
+    <block type="wait">
+      <value name="time">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="waitUntil">
+      <value name="condition"></value>
+    </block>
+    <block type="repeatDoAndWaitUntil">
+      <value name="condition"></value>
+    </block>
+  </category>
+  <category name="运算" colour="#f3ab3a" icon="math">
+    <label text="运算"></label>
+    <block type="math_number"></block>
+    <block type="math_arithmetic">
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="randomInt">
+      <value name="startNum">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="endNum">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="sinCos">
+      <value name="degree">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="mathRound">
+      <value name="value">
+        <shadow type="math_number">
+          <field name="NUM">1.1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_advanced">
+      <value name="number">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="takeReminder">
+      <value name="dividend">
+        <shadow type="math_number">
+          <field name="NUM">27</field>
+        </shadow>
+      </value>
+      <value name="divisor">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constrain">
+      <value name="LOW">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="HIGH">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="mapNumber">
+      <value name="ks">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="ke">
+        <shadow type="math_number">
+          <field name="NUM">-1</field>
+        </shadow>
+      </value>
+      <value name="vs">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="ve">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="key">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_pick">
+      <value name="FIRST">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="SECOND">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_between">
+      <value name="SRC">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="LIMIT_1">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="LIMIT_2">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lengthV2">
+      <value name="x1">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+      <value name="y1">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+      <value name="x2">
+        <shadow type="math_number">
+          <field name="NUM">200</field>
+        </shadow>
+      </value>
+      <value name="y2">
+        <shadow type="math_number">
+          <field name="NUM">200</field>
+        </shadow>
+      </value>
+    </block>
+    <sep gap="40"></sep>
+    <block type="transfer_to_string"></block>
+    <block type="transfer_to_number"></block>
+    <sep gap="40"></sep>
+    <block type="text"></block>
+    <block type="strJoin">
+      <value name="str1">
+        <shadow type="text">
+          <field name="TEXT">a</field>
+        </shadow>
+      </value>
+      <value name="str2">
+        <shadow type="text">
+          <field name="TEXT">b</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="strLen">
+      <value name="str">
+        <shadow type="text">
+          <field name="TEXT">b</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="strSubstr">
+      <value name="str">
+        <shadow type="text">
+          <field name="TEXT">hello</field>
+        </shadow>
+      </value>
+      <value name="start">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="count">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="string_compare">
+      <value name="src">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+      <value name="dest">
+        <shadow type="text">
+          <field name="TEXT">ab</field>
+        </shadow>
+      </value>
+    </block>
+    <sep gap="40"></sep>
+    <block type="logic_negate" />
+    <block type="logic_operation" />
+  </category>
+  <category name="变量" colour="#ff7f46" icon="variables">
+    <label text="变量"></label>
+    <button text="创建变量" callbackKey="buttonPressedCreateGlobalVar"></button>
+    <block type="variablesGet"></block>
+    <block type="variablesSet">
+      <value name="value">
+        <shadow type="easy_text_number">
+          <field name="text_number">0</field>
+        </shadow>
+      </value>
+    </block>
+    <sep gap="40"></sep>
+    <button text="创建列表" callbackKey="buttonPressedCreateGlobalList"></button>
+    <block type="listsGet"></block>
+    <block type="listsAppend">
+      <value name="value">
+        <shadow type="easy_text_number">
+          <field name="text_number">东西</field>
+        </shadow>
+      </value>
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+    </block>
+    <block type="listsRemoveNthElement">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+      <value name="nth">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="listsRemoveAll">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+    </block>
+    <block type="listsInsertElementBeforeNthElement">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+      <value name="nth">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="value">
+        <shadow type="easy_text_number">
+          <field name="text_number">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="listsReplaceNthElement">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+      <value name="nth">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="value">
+        <shadow type="easy_text_number">
+          <field name="text_number">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="listsNthElement">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+      <value name="nth">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="listsFirstPosOfElementAppears">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+      <value name="value">
+        <shadow type="easy_text_number">
+          <field name="text_number">东西</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="listsElementsNum">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+    </block>
+    <block type="listsContainsElement">
+      <value name="lists">
+        <block type="listsGet"></block>
+      </value>
+      <value name="value">
+        <shadow type="easy_text_number">
+          <field name="text_number">东西</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="函数" custom="PROCEDURE" colour="#30ffd9" icon="functions">
+    <label text="函数"></label>
+  </category>
+
+  <category name="赛事任务" colour="#3eaedd" icon="task">
+    <label text="赛事任务"></label>
+    <block type="getTaskCount"></block>
+    <block type="getTotalScore"></block>
+    <block type="getTaskPosition">
+      <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="isTaskCompleted">
+      <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+  </category>
+
+  <category name="PID" colour="#a568f0" icon="algorithm">
+    <label text="PID"></label>
+    <label text="PID控制是一种常用的控制算法，通过综合利用比例、积分和微分控制，实现对系统的精确控制。" web-class="pidDetail secondDetail1" width="320" height="72"></label>
+    <label text="1. Kp（比例Proportional）：比例控制用于减小误差并提高系统响应速度。" web-class="pidDetail secondDetail2" width="320" height="50"></label>
+    <label text="2. Ki（积分Integral）：积分控制可以积累误差并逐渐减小它，使系统更接近目标值。" web-class="pidDetail secondDetail3" width="320" height="50"></label>
+    <label text="3. Kd（微分Derivative）：微分控制可以减小系统的超调和震荡，提高系统的稳定性。" web-class="pidDetail secondDetail4" width="320" height="50"></label>
+    <label text="3" web-class="pidDetail secondDetail4" width="320" height="50"></label>
+    <label text="3" web-class="pidDetail secondDetail4" width="320" height="50"></label>
+    <block type="setNewPidParameters">
+        <value name="kp">
+            <shadow type="kpValueInPid">
+                <field name="NUM">0.5</field>
+            </shadow>
+        </value>
+        <value name="ki">
+            <shadow type="kiValueInPid">
+                <field name="NUM">2</field>
+            </shadow>
+        </value>
+        <value name="kd">
+            <shadow type="kdValueInPid">
+                <field name="NUM">0.001</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setPidDeviationValues">
+        <value name="expectedValue">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+         <value name="measuredValue">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getPidOutput" />
+  </category>
+  <insertmark1></insertmark1>
+  <insertmark3></insertmark3>
+  <insertmark4></insertmark4>
+  <category name="本地数据" icon="csv" colour="#a568f0">
+    <label text="本地数据"></label>
+    <foreignObject id="listDataset"></foreignObject>
+    <block type="list_dataset_num"></block>
+    <block type="list_dataset_getdata">
+      <value name="number">
+          <shadow type="math_number">
+              <field name="NUM">1</field>
+          </shadow>
+      </value>
+    </block>
+    <block type="list_dataset_getonedata">
+      <value name="row">
+        <shadow type="math_number">
+            <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="col">
+        <shadow type="math_number">
+            <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <insertmark2></insertmark2>
+</xml>

@@ -1,0 +1,7 @@
+<xml>
+  <category name="语音识别" colour="#a568f0" icon="voice" extensionId="speechRecognition">
+    <label text="语音识别"></label>
+    <block type="startSentenceRecognition" />
+    <block type="getSentenceRecognitionResult" />
+  </category>
+</xml>

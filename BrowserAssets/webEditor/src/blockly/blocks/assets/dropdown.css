@@ -1,0 +1,48 @@
+
+.blocklyDropDownDiv {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: none;
+  padding: 4px;
+  -webkit-user-select: none;
+  min-height: 15px;
+  background-color: rgba(23,25,41, .9);
+  border: 1px solid rgba(255,255, 255, .4);
+  border-radius: 0;
+  overflow: inherit;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: none;
+}
+.blocklyDropDownDiv:after{
+  content: '';
+  background: url(../../../assets/images/icon.png) no-repeat;
+  position: absolute;
+  left: -9px;
+  top: -9px;
+  width: 72px;
+  height: 72px;
+  z-index: -1;
+}
+
+.blocklyDropDownArrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  z-index: -1;
+  background-color: inherit;
+  border-color: inherit;
+}
+
+.blocklyDropDownContent {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.blocklyText_singleAngle .blocklyText tspan{
+  display: none;
+}

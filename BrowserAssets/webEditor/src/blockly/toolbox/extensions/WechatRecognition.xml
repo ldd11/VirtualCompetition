@@ -1,0 +1,7 @@
+<xml>
+  <category name="微信识物" colour="#3bd6ff" icon="humandetection" extensionId="wechatRecognition">
+    <label text="微信识物"></label>
+    <block type="detectProductBeta"></block>
+    <block type="detectProductBetaResult" />
+  </category>
+</xml>

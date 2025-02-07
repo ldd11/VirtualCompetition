@@ -1,0 +1,212 @@
+@import "../../assets/style/mixin.less";
+@prefix-cls: ~"blocklyUpload";
+.@{prefix-cls}{
+  padding: 0 16px;
+  &-placeholder{
+    cursor: pointer;
+    text-align: center;
+    line-height: 26px;
+    position: relative;
+    display: inline-block;
+    padding: 0 14px;
+    font-family:'TTTGB';
+    color: #fff;
+    &:hover{
+      background: linear-gradient(106deg, rgba(56, 255, 229, 0.6) 2.54%, rgba(14, 48, 255, 0.6) 100%);
+    }
+    &:after,&:before{
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: #fff;
+        top: -2px;
+    }
+    &:after{
+        right: -2px;
+    }
+    &:before{
+        left: -2px;
+    }
+    border: 2px solid #2ABCEC;
+    background: linear-gradient(106deg, rgba(56, 255, 229, 0.30) 2.54%, rgba(14, 48, 255, 0.30) 100%);
+    &-icon{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      &:after,&:before{
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          background: #fff;
+          bottom: -2px;
+      }
+      &:after{
+          right: -2px;
+      }
+      &:before{
+          left: -2px;
+      }
+    }
+  }
+  &-progress{
+    height: 0;
+    overflow: hidden;
+    transition: all 200ms;
+    opacity: 0;
+    &.expand{
+      height: 30px;
+      opacity: 1;
+    }
+    &-item{
+      transition: all 500ms;
+      padding: 0 5px;
+      display: flex;
+      align-items: center;
+      &:hover{
+        background: rgba(#4a596f, .1);
+        .@{prefix-cls}-progress-item-cancel{
+          color: rgba(#4a596f, .4);
+        }
+      }
+      &-icon,.icon-annex{
+        margin-right: 2px;
+      }
+      &-filename{
+        flex: 1;
+        .ellipsis(100%);
+      }
+      &-cancel{
+        cursor: pointer;
+        color: rgba(#4a596f, 0);
+        transition: all 500ms;
+        .icon{
+          font-size: 12px;
+        }
+      }
+    }
+    &-bar{
+      background: rgba(#4a596f, .2);
+      margin-top: 2px;
+      height: 2px;
+      position: relative;
+      border-radius: 1px;
+      overflow: hidden;
+      &-inner{
+        background-color: #0080ef;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 1px;
+      }
+    }
+  }
+  &-list{
+    margin-top: 16px;
+  }
+  &-tips{
+    margin: 8px 0 18px;
+    font-size: 15px;
+    color: rgba(#4a596f, .5);
+    &-ctrls{
+      cursor: pointer;
+      margin-left: 8px;
+      color: @link-color;
+      &:hover{
+        color: @link-color-hover;
+      }
+    }
+  }
+  &-tips{
+    font-size: 14px;
+  }
+  &-excel{
+    &-item{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(#95C1FF, .2);
+      height: 36px;
+      padding: 0 14px;
+      box-sizing:border-box;
+      margin-bottom: 10px;
+      color: #95C1FF;
+      &:hover{
+        background: rgba(#95C1FF, .3);
+      }
+      &-title{
+        flex: 1;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+      &-ctrls{
+        display: flex;
+        align-items: center;
+        &-btn{
+          cursor: pointer;
+          margin-left: 10px;
+          &.del{
+            color: rgba(#fff, .5);
+            .vhblocklyicon{
+              font-size: 20px;
+            }
+            &:hover{
+              color: rgba(#fff, 1);
+            }
+          }
+          &.primary{
+            color: @link-color;
+            &:hover{
+              color: @link-color-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-dialog{
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #b3d3f8;
+    border-radius: 12px;
+    padding: 0;
+    .eui-dialog{
+      &-hd{
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #B3D3F8;
+        position: relative;
+        z-index: 1;
+        background: #ECF7FF;
+        &-title{
+          margin: 0;
+          height: 40px;
+          line-height: 40px;
+          text-align: left;
+          padding-left: 20px;
+          font-size: 18px;
+          font-weight: bold;
+          color: @link-color;
+        }
+      }
+      &-bd{
+        padding: 0;
+        z-index: 2;
+      }
+      &-close{
+        top: 13px;
+        color:rgba(@link-color, .4);
+        &:hover{
+          color:rgba(@link-color, 1);
+        }
+      }
+    }
+      
+  }
+}

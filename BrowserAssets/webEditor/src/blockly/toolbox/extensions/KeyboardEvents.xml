@@ -1,0 +1,13 @@
+<xml>
+  <category name="键盘事件" colour="#69c12e" icon="keyboard" extensionId="keyboardEvents">
+    <label text="键盘事件"></label>
+    <block type="keyboardpresstype1">
+      <field name="Keyboard_event_type">0</field>
+      <field name="Keyboard_code">a</field>
+    </block>
+    <block type="keyboardpresstype2">
+      <field name="Keyboard_event_type">0</field>
+      <field name="Keyboard_code">a</field>
+    </block>
+  </category>
+</xml>

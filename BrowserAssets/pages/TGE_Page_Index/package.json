@@ -1,0 +1,16 @@
+{
+  "name": "tge_page_index",
+  "version": "1.1.0-alpha.1",
+  "description": "tge页面",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version && git push origin --follow-tags",
+    "pre-release": "standard-version --prerelease alpha && git push origin --follow-tags"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
+}

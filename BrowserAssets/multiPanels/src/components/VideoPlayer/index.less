@@ -1,0 +1,109 @@
+@import '../../assets/style/mixin.less';
+@prefix-cls: ~"player";
+.@{prefix-cls}{
+   width: 100%;
+//    height: 142px;
+   position: relative;
+   &-main{
+    img{
+        height: auto;
+    }
+   }
+   &-main,&-offline{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   }
+   &-offline{
+    .align-flex();
+    .align-flex-middle();
+    .align-flex-center();
+    background: rgba(#95C1FF, .1);
+    color: #fff;
+   }
+   &-poster{
+    width: 100%;
+    // height: 142px;
+    // object-fit: cover;
+   }
+   &-progress{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(149, 193, 255, 0.6);
+    &-inner{
+        height: 3px;
+        background: rgba(105, 244, 255, 1);
+    }
+   }
+   &-time{
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    padding: 0 6px;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+   }
+   &-status{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(#fff, .3);
+    background: rgba(#000, .2);
+    border-radius: 50%;
+    .align-flex();
+    .align-flex-middle();
+    .align-flex-center();
+    cursor: pointer;
+    &:hover{
+        .iconfont{
+            color: rgba(#fff, 1);
+        }
+    }
+    .iconfont{
+        color: rgba(#fff, .7);
+        transition: all 200ms;
+    }
+    .icon-arrow{
+        font-size: 18px;
+        margin-left: 4px;
+    }
+    .icon-pause{
+        font-size: 12px;
+    }
+   }
+   &-ctrls{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgba(#fff, .3);
+    background: rgba(#000, .2);
+    .align-flex();
+    .align-flex-middle();
+    .align-flex-center();
+    cursor: pointer;
+    &:hover{
+        .iconfont{
+            color: rgba(#fff, 1);
+        }
+    }
+    .iconfont{
+        color: rgba(#fff, .7);
+        transition: all 200ms;
+        font-size: 14px;
+    }
+   }
+}

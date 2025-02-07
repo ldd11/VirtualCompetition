@@ -1,0 +1,242 @@
+<category name="运动" colour="#d061bc" icon="action">
+    <label text="运动"></label>
+    <block type="setQQCarMotionMode"></block>
+    <block type="setQQCarRateAndTimeOnLand">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfLandInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="timeValueOfQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setQQCarRateOnLand">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfLandInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>    
+    </block>
+    <block type="rotateQQCarAndSetRateAndTimeOnLand">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfLandInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="angle">
+            <shadow type="math_number">
+                <field name="NUM">15</field>
+            </shadow>
+            <shadow type="angleValueInQQCar">
+                <field name="NUM">15</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="timeValueOfQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="rotateQQCarAndSetRateOnLand">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfLandInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="angle">
+            <shadow type="math_number">
+                <field name="NUM">15</field>
+            </shadow>
+            <shadow type="angleValueInQQCar">
+                <field name="NUM">15</field>
+            </shadow>
+        </value>    
+    </block>
+    <block type="stopQQCarMotionOnLand">
+    </block>
+    <block type="setQQCarRateAndTimeOnAir">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfAirInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="timeValueOfQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setQQCarRateOnAir">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfAirInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>    
+    </block>
+    <block type="rotateQQCarAndSetRateAndTimeOnAir">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfAirInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="angle">
+            <shadow type="math_number">
+                <field name="NUM">15</field>
+            </shadow>
+            <shadow type="angleValueInQQCar">
+                <field name="NUM">15</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="timeValueOfQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>  
+    </block>
+    <block type="rotateQQCarAndSetRateOnAir">
+        <value name="rate">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+            <shadow type="rateValueOfAirInQQCar">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="angle">
+            <shadow type="math_number">
+                <field name="NUM">15</field>
+            </shadow>
+            <shadow type="angleValueInQQCar">
+                <field name="NUM">15</field>
+            </shadow>
+        </value>  
+    </block>
+    <sep gap="10"></sep>
+    <block type="startQQCarLanding"></block>
+    <block type="stopQQCarMotionOnAir"></block>
+    <sep gap="10"></sep>
+    <block type="getMotionStateOfQQCar"></block>
+</category>
+<category name="感知" colour="#ff6464" icon="detection">
+    <label text="感知"></label>
+    <block type="getInfraredDepthSensorValueOfQQCar"></block>
+</category>
+<category name="灯光" colour="#d061bc" icon="light">
+    <label text="灯光"></label>
+    <block type="switchLightAndSetColorOfQQCar"></block>
+</category>
+<category name="图像智能" colour="#ff6464" icon="imgdetection">
+    <label text="图像智能"></label>
+    <block type="setSensorOn"></block>
+    <block type="getRecognizedTrafficLightCount"></block>
+    <block type="getRecognizedTrafficLightInfoOfText">
+        <value name="light_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficLightInfoOfNumber">
+        <value name="light_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedHumanCount"></block>
+    <block type="getRecognizedHumanName">
+        <value name="human_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedHumanInfo">
+        <value name="human_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRoadRecognizeColor"></block>
+    <block type="getRecognizedRoadLineCount"></block>
+    <block type="isRecognizeRoadLineType"></block>
+    <block type="getRecognizedRoadLineInfo">
+        <value name="line_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="point_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficSignCount"></block>
+    <block type="getRecognizedTrafficSignInfoOfText">
+        <value name="sign_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficSignInfoOfNumber">
+        <value name="sign_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedItemCount"></block>
+    <block type="getRecognizedItemName">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedItemInfo">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+  </category>

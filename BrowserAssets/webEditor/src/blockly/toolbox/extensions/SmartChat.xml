@@ -1,0 +1,13 @@
+<xml>
+  <category name="智能聊天" icon="robot" colour="#d061bc" extensionId="smartChat">
+    <label text="智能聊天"></label>
+    <block type="startAiRobotChat">
+        <value name="INPUT">
+            <shadow type="text">
+                <field name="TEXT">今天星期几？</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getAiRobotAiAnswer"></block>
+  </category>
+</xml>

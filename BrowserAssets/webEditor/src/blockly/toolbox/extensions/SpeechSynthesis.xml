@@ -1,0 +1,23 @@
+<xml>
+  <category name="语音合成" colour="#5b8bf8" icon="deacon" extensionId="speechSynthesis">
+    <label text="语音合成"></label>
+    <block type="voiceSynthesisReadaloud">
+        <value name="INPUT">
+            <shadow type="text">
+                <field name="TEXT">我爱编程,我爱扣叮</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="voiceSynthesisReadaloudUtil">
+        <value name="INPUT">
+            <shadow type="text">
+                <field name="TEXT">我爱编程,我爱扣叮</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="voiceSynthesisSpeakerSet"></block>
+    <block type="voiceSynthesisSpeedSet">
+        <field name="Speaker_Speed">0</field>
+    </block>
+  </category>
+</xml>

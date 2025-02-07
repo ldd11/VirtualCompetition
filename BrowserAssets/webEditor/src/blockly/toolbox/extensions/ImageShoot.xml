@@ -1,0 +1,15 @@
+<xml>
+  <category name="图像拍摄" colour="#d061bc" icon="shoot" extensionId="imageShoot">
+    <label text="图像拍摄"></label>
+    <block type="takePhotoByUsbCamera">
+        <field name="delayTime">1</field>
+    </block>
+    <block type="usbImage" />
+    <block type="takePhotoByVirtualCamera">
+        <field name="delayTime">1</field>
+    </block>
+    <block type="virtualImage" />
+    <block type="takePhotoByLocalCamera" />
+    <block type="localImage" />
+  </category>
+</xml>

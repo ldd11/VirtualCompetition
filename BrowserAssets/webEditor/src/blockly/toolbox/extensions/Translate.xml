@@ -1,0 +1,12 @@
+<xml>
+  <category name="翻译" colour="#ff6464" icon="translate" extensionId="translate">
+    <label text="翻译"></label>
+    <block type="translateText">
+        <value name="text">
+            <shadow type="text">
+                <field name="TEXT">你好</field>
+            </shadow>
+        </value>
+    </block>
+  </category>
+</xml>

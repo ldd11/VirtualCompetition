@@ -1,0 +1,9 @@
+<xml>
+  <category name="人脸识别" colour="#3eaedd" icon="face" extensionId="faceRecognition">
+    <label text="人脸识别"></label>
+    <block type="startFaceDetect" />
+    <block type="getFaceDetectResultOfText" />
+    <block type="getFaceDetectResultOfNumber" />
+    <block type="getFaceDetectResultOfBool" />
+  </category>
+</xml>

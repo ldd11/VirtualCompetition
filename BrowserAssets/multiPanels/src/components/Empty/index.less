@@ -1,0 +1,29 @@
+@import '../../assets/style/mixin.less';
+@import '../../assets/style/sprite.less';
+@prefix-cls: ~"empty";
+.@{prefix-cls}{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    text-align: center;
+   &-icon{
+    background-image:url(@spritesheet-image);
+    .sprite-position(@empty1);
+    .sprite-width(@empty1);
+    .sprite-height(@empty1);
+    margin: 0 auto;
+   }
+   &-title{
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    margin: 20px 0 5px;
+   }
+   &-description{
+    color: #95c1ff;
+    font-size: 16px;
+   }
+}

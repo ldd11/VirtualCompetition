@@ -1,0 +1,50 @@
+@import '../../assets/style/mixin.less';
+@import '../../assets/style/sprite.less';
+@prefix-cls: ~"countdown";
+.@{prefix-cls}{
+    width: 294px;
+    height: 72px;
+    background: rgba(0, 108, 255, 0.6);
+    border: 1px solid rgba(149, 193, 255, 0.4);
+    margin: 0 auto 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    &-hd{
+        height: 24px;
+        background: #006CFF;
+        line-height: 24px;
+        color: #fff;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        &-icon{
+            display: block;
+            background-image:url(@spritesheet-image);
+            .sprite-position(@icon-tips);
+            .sprite-width(@icon-tips);
+            .sprite-height(@icon-tips);
+            margin: 0 8px;
+        }
+    }
+    &-bd{
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 32px;
+        font-family: 'TTTGB';
+        &:after{
+            content: 'COUNTDOWN';
+            font-family: 'TTTGB';
+            opacity: .1;
+            color: #95C1FF;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+        }
+    }
+}

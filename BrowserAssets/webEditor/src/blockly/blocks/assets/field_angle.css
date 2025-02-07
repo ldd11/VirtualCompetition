@@ -1,0 +1,49 @@
+
+  .angle-blocklyAngleLine {
+      stroke: #fff;
+      stroke-width: 2;
+      pointer-events: none;
+  
+  }
+  
+  .angle-blocklyAngleBaseLine {
+    stroke: #89bfeb;
+    stroke-width: 0.5;
+  }
+  
+  .angle-blocklyAngleMarks {
+      stroke: #62b7ff;
+      stroke-width: 1;
+  }
+  
+  .angle-blocklyAngleHeavyMarks {
+    stroke: #62b7ff;
+    stroke-width: 2;
+  }
+  
+  .angle-blocklyAngleCircle {
+    stroke:#346ab7;
+    stroke-width: 1;
+    fill:rgba(0, 0, 0, 0);
+  }
+  
+  .angle-blocklyCenterPoint{
+    fill:rgba(73, 168, 250, 1.0);
+  }
+
+  .angle-blocklyAngleGauge {
+    fill:rgba(97, 181, 252, 0.3);
+    stroke:#62b7ff;
+    stroke-width: 1;
+  }
+  
+  .angle-blocklyAngleDotbg {
+      fill:rgba(97, 181, 252, 0.3);
+      stroke:#62b7ff;
+      stroke-width: 2;
+  }
+  
+  .angle-blocklyAngleDot {
+      fill: rgb(162, 241, 251);
+      fill-rule: evenodd;
+  }

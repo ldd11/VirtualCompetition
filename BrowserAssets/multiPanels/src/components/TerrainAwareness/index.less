@@ -1,0 +1,46 @@
+@import '../../assets/style/mixin.less';
+@prefix-cls: ~"terrain";
+.@{prefix-cls}{
+    background: rgba(149, 193, 255, 0.1);
+    border-top: 1px solid rgba(149, 193, 255, 0.3);
+    padding: 15px;
+    .align-flex();
+    &-grid{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+        height: 112px;
+        width: 112px;
+        grid-gap: 4px;
+        margin: auto;
+        &-item{
+            width: 34px;
+            height: 34px;
+            &-pic{
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+    &-info{
+        margin-left: 40px;
+        flex: 1;
+        &-item{
+            .align-flex();     
+            .align-flex-middle();
+            margin-bottom: 11px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            &-pic{
+                width: 16px;
+                height: 16px;
+            }
+            &-text{
+                font-size: 14px;
+                color: #95C1FF;
+                margin-left: 14px;
+            }
+        }
+    }
+}

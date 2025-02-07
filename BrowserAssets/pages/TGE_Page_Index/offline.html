@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TGE-腾讯扣叮</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft YaHei", "微软雅黑", "PingFang SC", "sans-serif";
+        }
+
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+        }
+
+        .page {
+            background: url(./images/bg.png) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .page-title {
+            text-indent: -999em;
+            overflow: hidden;
+            margin: 30px 0 0 40px;
+            background: url(./images/sprite-offline.png) no-repeat;
+        }
+
+        .page-title.course {
+            background-position: 0px -48px;
+            width: 499px;
+            height: 64px;
+        }
+
+        .page-title.personal {
+            background-position: 0px -116px;
+            width: 337px;
+            height: 65px;
+        }
+
+        .back-btn {
+            background: url(./images/sprite-offline.png) no-repeat;
+            background-position: 0px -270px;
+            width: 413px;
+            height: 81px;
+            cursor: pointer;
+            text-indent: -999em;
+            overflow: hidden;
+        }
+
+        .back-btn:hover {
+            background-position: 0px -185px;
+        }
+
+        .offline {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .offline-icon {
+            background: url(./images/sprite-offline.png) no-repeat;
+            background-position: 0px -355px;
+            width: 171px;
+            height: 171px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .offline-text {
+            font-size: 20px;
+            color: #b7daff;
+            margin: 50px 0;
+        }
+
+        .offline-btn {
+            display: block;
+            background: url(./images/sprite-offline.png) no-repeat;
+            background-position: 0px 0px;
+            width: 117px;
+            height: 44px;
+            cursor: pointer;
+            text-indent: -999em;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="back-btn">返回</div>
+        <div class="page-title"></div>
+        <!-- 课程追加：match 作品追加personal -->
+        <div class="offline">
+            <div class="offline-icon"></div>
+            <p class="offline-text">网络异常，请检查网络后刷新重试</p>
+            <div class="offline-btn">刷新</div>
+        </div>
+    </div>
+    <script>
+        // 和unity通讯的基础
+        var NCAll = {
+            UNITY_CALL_JS: 'unityCallJS',
+            JS_CALL_UNITY: 'jsCallUnity'
+        };
+        function unityCallJS(...args) {
+            var calldata = { args, ret: 0 };
+            //EventUtil.emit(NCAll.UNITY_CALL_JS, calldata);
+
+            console.log(args);
+            var jsonArg = JSON.parse(args[0]);
+
+            if (jsonArg && jsonArg.data && jsonArg.data.cbKey != "") {
+                // 支持通过cbKey回调
+                window[jsonArg.data.cbKey](jsonArg.data.value);
+            }
+
+            // TODO:
+            return { value: calldata.ret };
+        }
+
+        // function sendMsgToZFBrowser(...args) {
+        //     if (window[NCAll.JS_CALL_UNITY]) {
+        //         window[NCAll.JS_CALL_UNITY](...args);
+        //     }
+        // }
+
+        async function sendMsgToZFBrowser(...args) {
+            await waitJSCallUnityInit();
+            if (window[NCAll.JS_CALL_UNITY]) {
+                window[NCAll.JS_CALL_UNITY](...args);
+            }
+        }
+
+        // 页面onload事件会在unity的onload完成后触发，所以这里需要等待 
+        function waitJSCallUnityInit() {
+            if (window[NCAll.JS_CALL_UNITY]) {
+                return;
+            }
+            return new Promise((resolve) => {
+                const checkJSCallUnityInit = setInterval(() => {
+                    if (window[NCAll.JS_CALL_UNITY]) {
+                        clearInterval(checkJSCallUnityInit);
+                        resolve();
+                    }
+                }, 100);
+            });
+        }
+
+        function jsCallNative(cmd, args, param = null) {
+            console.log("jsCallNative:", cmd, args, param);
+            sendMsgToZFBrowser(cmd, args, param);
+        }
+
+        function addDomClick(dom, callback) {
+            dom.addEventListener('click', function(e) {
+                e.preventDefault();
+                callback();
+            });
+            dom.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                callback();
+            });
+        }
+
+        window[NCAll.UNITY_CALL_JS] = unityCallJS;
+
+
+        // 获取url参数，后续显示相应的内容和处理
+        var searchParams = new URLSearchParams(window.location.search);
+        var page = searchParams.get('page');
+        console.log("page: " + page);
+
+        jsCallNative('NotifyPageEvent', { name: 'PageJSLoaded' });
+
+        if (page.endsWith("/tge-personal/")) {
+            document.querySelector(".page-title").classList.add("personal");
+        } else if (page.endsWith("/tge-match/")) {
+            document.querySelector(".page-title").classList.add("match");
+        } else if (page.endsWith("/TGE_Course/")) {
+            document.querySelector(".page-title").classList.add("course");
+        }
+
+        addDomClick(document.querySelector(".back-btn"), function () {
+            console.log("BackToMainBrowser");
+            jsCallNative("BackToMainBrowser");
+        });
+
+        // 刷新上一轮失败的页面
+        addDomClick(document.querySelector(".offline-btn"), function () {
+            console.log("ReloadPreFailPage", page)
+            window.location.href = page;
+        });
+    </script>
+</body>
+
+</html>

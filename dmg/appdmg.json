@@ -1,0 +1,14 @@
+{
+
+  "title": "VirtualCompetition",
+  "icon-size": 48,
+  "icon": "Icon.icns",
+  "window": {
+    "position": { "x": 200, "y": 400 },
+    "size": { "width": 600, "height": 360 }
+  },
+  "contents": [
+    { "x": 200, "y": 180, "type": "file", "path": "VirtualCompetition.app" },
+    { "x": 400, "y": 180, "type": "link", "path": "/Applications" }
+  ]
+}

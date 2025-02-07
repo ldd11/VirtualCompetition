@@ -1,0 +1,106 @@
+@import '../../assets/style/mixin.less';
+@import '../../assets/style/sprite.less';
+@prefix-cls: ~"pagination";
+.@{prefix-cls}{
+  .align-flex();
+  .align-flex-middle();
+  .align-flex-center();
+  margin-bottom: 20px;
+  &-ctrls{
+    background-image:url(@spritesheet-image);
+    .sprite-position(@triangle);
+    .sprite-width(@triangle);
+    .sprite-height(@triangle);
+    cursor: pointer;
+    opacity: .7;
+    &:hover{
+      opacity: 1;
+    }
+    &.disabled{
+      opacity: .2;
+    }
+    &.prev{
+     margin-right: 4px;
+    }
+    &.next{
+      margin-left: 4px;
+      transform: rotate(180deg)
+    }
+  }
+  &-list{
+    .align-flex();
+    .align-flex-middle();
+    height: 32px;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #2d60b0;
+      background: rgba(#2553a7, .5);
+      z-index: 1;
+    }
+  }
+  &-item{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    line-height: 32px;
+    text-align: center;
+    font-family: 'TTTGB';
+    color: rgba(#95c1ff, .6);
+    font-size: 18px;
+    &:first-child{
+      &:before{
+        display: none;
+      }
+    }
+    &.active{
+      color: #fff;
+      &:hover{
+        color: #fff;
+      }
+      &:before{
+        display: none;
+      }
+      &:after{
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        width: 33px;
+        height: 32px;
+        background: #1472ff;
+        border: 1px solid #14baff;
+        z-index: 2;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+      width: 1px;
+      height: 24px;
+      background: #2d60b0;
+      z-index: 1;
+    }
+    &:hover{
+      color: rgba(#95c1ff, 1);
+    }
+    &-label{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      cursor: pointer;
+      z-index: 3;
+    }
+  }
+}

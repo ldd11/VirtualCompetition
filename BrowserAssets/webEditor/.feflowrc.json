@@ -1,0 +1,22 @@
+{
+  "devkit": {
+    "commands": {
+      "dev": {
+        "builder": "@tencent/feflow-devkit-ec-ide:dev",
+        "options": {}
+      },
+      "build": {
+        "builder": "@tencent/feflow-devkit-ec-ide:build",
+        "options": {}
+      },
+      "blockly": {
+        "builder": "@tencent/feflow-devkit-ec-ide:blockly",
+        "options": {}
+      },
+      "inspect": {
+        "builder": "@tencent/feflow-devkit-ec-ide:inspect",
+        "options": {}
+      }
+    }
+  }
+}

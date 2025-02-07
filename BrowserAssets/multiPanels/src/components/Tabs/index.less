@@ -1,0 +1,87 @@
+@import '../../assets/style/mixin.less';
+@import '../../assets/style/sprite.less';
+@prefix-cls: ~"tabs";
+.@{prefix-cls}{
+    position: absolute;
+    z-index: 3;
+    right: -1px;
+    &-item{
+        background-image:url(@spritesheet-image);
+        margin-bottom: 6px;
+        cursor: pointer;
+        .sprite-position(@tab-bg);
+        .sprite-width(@tab-bg-on);
+        .sprite-height(@tab-bg-on);
+        overflow: hidden;
+        position: relative;
+        &.current{
+            .sprite-position(@tab-bg-on);
+            &:after{
+                opacity: 1;
+            }
+        }
+        &.hoverStyle{
+            &:after{
+                opacity: 1;
+            }
+        }
+        &:after{
+            content: '';
+            background-image:url(@spritesheet-image);
+            opacity: .5;
+            position: absolute;
+            top: 50%;
+            right: -14px;
+            transform: translateY(-50%);
+        }
+        &.tab0{
+            &:after{
+                .sprite-position(@tab0);
+                .sprite-width(@tab0);
+                .sprite-height(@tab0); 
+            }
+        }
+        &.tab1{
+            &:after{
+                .sprite-position(@tab1);
+                .sprite-width(@tab1);
+                .sprite-height(@tab1); 
+            }
+        }
+        &.tab2{
+            &:after{
+                .sprite-position(@tab2);
+                .sprite-width(@tab2);
+                .sprite-height(@tab2); 
+            }
+        }
+        &.tab3{
+            &:after{
+                .sprite-position(@tab3);
+                .sprite-width(@tab3);
+                .sprite-height(@tab3); 
+            }
+        }
+        &.tab4{
+            &:after{
+                .sprite-position(@tab4);
+                .sprite-width(@tab4);
+                .sprite-height(@tab4); 
+            }
+        }
+        &.tab5{
+            &:after{
+                .sprite-position(@tab5);
+                .sprite-width(@tab5);
+                .sprite-height(@tab5); 
+            }
+        }
+        &.tab6{
+            &:after{
+                .sprite-position(@tab6);
+                .sprite-width(@tab6);
+                .sprite-height(@tab6); 
+            }
+        }
+    }
+}

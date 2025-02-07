@@ -1,0 +1,65 @@
+@import '../../assets/style/mixin.less';
+@import '../../assets/style/sprite.less';
+@prefix-cls: ~"robot";
+.@{prefix-cls}{
+   &-imgwrap{
+    position: relative;
+    .align-flex();
+    .align-flex-middle();
+    .align-flex-center();
+    height: 210px;
+    &:after{
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        background: url(../../assets/images/robot-bg.png) no-repeat;
+        width: 325px;
+        height: 209px;
+        z-index: 1;
+    }
+    &-pic{
+        position: relative;
+        z-index: 3;
+        max-width: 170px;
+    }
+   }
+   &-name{
+    display: block;
+    margin: 14px 12px 20px;
+    background-image:url(@spritesheet-image);
+    .sprite-position(@robot-bg);
+    .sprite-width(@robot-bg);
+    .sprite-height(@robot-bg);
+    position: relative;
+    &-text{
+        font-size: 20px;
+        font-family: 'TTTGB';
+        color: #fff;
+        position: absolute;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+        width: 180px;
+        left: 16px;
+        &:first-child{
+            color: rgba(#69F4FF, .4);
+            left: 20px;
+            top: 4px;
+        }
+    }
+   }
+   &-list{
+    padding: 0 12px;
+   }
+   &-item{
+    margin-bottom: 20px;
+    &-hd{
+        color: #95C1FF;
+        font-size: 12px;
+    }
+    &-bd{
+        margin-top: 6px;
+    }
+   }
+}

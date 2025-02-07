@@ -1,0 +1,7 @@
+<xml>
+  <category name="文字识别" colour="#ff6464" icon="string" extensionId="textRecognition">
+    <label text="文字识别"></label>
+    <block type="textRecognition"></block>
+    <block type="textRecognitionResult" />
+  </category>
+</xml>

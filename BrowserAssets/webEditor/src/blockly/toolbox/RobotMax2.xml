@@ -1,0 +1,200 @@
+<category name="神态" colour="#69c12e" icon="appearance">
+    <label text="神态"></label>
+    <block type="playSurPlace" />
+    <block type="playTumble" />
+    <block type="playRedEnvelope" />
+    <block type="playDoubt" />
+    <block type="playNod" />
+    <block type="playDown" />
+    <block type="playSit" />
+    <block type="playRoll" />
+    <block type="playHandShake" />
+    <block type="playDance" />
+    <block type="playFear" />
+    <block type="playHappy" />
+    <block type="playBrake" />
+    <block type="playChaseTail" />
+</category>
+<category name="运动" colour="#d061bc" icon="action">
+    <label text="运动"></label>
+    <block type="setMotionMode"></block>
+    <block type="faceToPosition">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">100</field>
+            </shadow>
+        </value>
+        <value name="z">
+            <shadow type="math_number">
+                <field name="NUM">100</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRotation">
+        <value name="angle">
+            <shadow type="singleAngle">
+                <field name="angle">90</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="rotateUntilEnd">
+        <value name="angle">
+            <shadow type="singleAngle">
+                <field name="angle">15</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRateInFoot">
+        <value name="rate">
+            <shadow type="rateValueInFoot">
+                <field name="NUM">0.3</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRateAndTimeInFoot">
+        <value name="rate">
+            <shadow type="rateValueInFoot">
+                <field name="NUM">0.3</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="jumpInFoot">
+        <value name="distance">
+            <shadow type="distanceValueInFoot">
+                <field name="NUM">20</field>
+            </shadow>
+        </value>
+        <value name="height">
+            <shadow type="jumpValueInFoot">
+                <field name="NUM">20</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="backflipInFoot">
+        <value name="distance">
+            <shadow type="distanceValueInFoot">
+                <field name="NUM">20</field>
+            </shadow>
+        </value>
+        <value name="height">
+            <shadow type="backflipValueInFoot">
+                <field name="NUM">20</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRateInWheel">
+        <value name="rate">
+            <shadow type="rateValueInWheel">
+                <field name="NUM">0.3</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRateAndTimeInWheel">
+        <value name="rate">
+            <shadow type="rateValueInWheel">
+                <field name="NUM">0.3</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="stopMotion" />
+    <block type="getDirection" />
+</category>
+<category name="感知" colour="#ff6464" icon="detection">
+    <label text="感知"></label>    
+    <block type="enableInfraredDepthSensor" />
+    <block type="getInfraredDepthSensorValue" />
+    <block type="whenInfraredDepthSensorValue">
+        <value name="value">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="enableTerrainAwareness" />
+    <block type="getTerrainAwarenessValue" />
+    <block type="checkTerrainValue" />
+    <!-- <block type="getLongitudeOrLatitude" /> -->
+    <block type="getPosition" />
+    <block type="checkIfPassCoordinate">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="y">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getCountTime" />
+    <block type="resetCountTime" />
+    <block type="takePhoto" />
+    <block type="recordVideo" />
+
+    <sep gap="40"></sep>
+    <block type="getTemperatureOneValue"/>
+    <sep gap="40"></sep>
+    <block type="getLightOneValue"/>
+    <sep gap="40"></sep>
+    <block type="getHumindityOneValue"/>
+    <sep gap="40"></sep>
+    <block type="getCo2OneValue"/>
+    <sep gap="40"></sep>
+    <block type="getSo2OneValue"/>
+    <sep gap="40"></sep>
+    <block type="getNoiseOneValue"/>
+
+</category>
+<category name="智能" colour="#3eaedd" icon="wifi">
+    <label text="智能"></label>
+    <block type="enableTargetRecognition" />
+    <block type="getTargetRecognitionCount" />
+    <block type="getTargetRecognitionValue">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="checkTargetRecognized" />
+    <!-- <block type="setAiMode" />
+      <block type="getAiTrafficSensorType" />
+      <block type="getAiRoadOffset" />
+      <block type="getAiTagData" />
+      <block type="getAiObstacleTopEdgeValue" /> -->
+</category>
+<category name="扩展机构" colour="#5b8bf8" icon="system">
+    <label text="扩展机构"></label>
+    <block type="activeRobotArm" />
+    <block type="checkRobotArmStatus" />
+    <block type="movePincher">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+        <value name="z">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+        <value name="y">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+    </block>
+    <!--<block type="storeItemInPincher" />-->
+    <block type="loadItemFromPincher" />
+</category>

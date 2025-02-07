@@ -1,0 +1,138 @@
+@import '../../assets/style/sprite.less';
+.ql-editor{
+    line-height: 1.5;
+    .ql-size-large {
+        // 标题
+        font-size: 20px;
+        font-weight: bold;
+        color: #69f4ff;
+    }
+    
+    .ql-syntax{
+        // 代码片段
+        background: rgba(#000, .3);
+        border: 1px solid rgba(#90bbf7, .3);
+        color: #95c1ff;
+        font-size: 18px;
+        overflow: visible;
+    }
+    p{
+        // 正文
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+}
+.ql-snow .ql-editor ul,.ql-snow .ql-editor ol{
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #fff;
+}
+.ql-snow .ql-editor pre{
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+
+.ql-snow .ql-editor blockquote {
+    // 引用
+    border-left: 2px solid #95c1ff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 8px;
+    color: #fff;
+    font-size: 18px;
+}
+.reset-btn{
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    background-image: url(../../assets/images/small-btn.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 0 !important;
+    width: 100px !important;
+}
+.reset-btn:hover{
+    background-image: url(../../assets/images/small-btn-hover.png) !important;
+}
+.exercisepanel{
+    .pagination{
+        margin-top: 20px;
+    }
+    .panels-line{
+        margin: 0;
+    }
+}
+.exercise{
+    border-top: 1px solid rgba(#b0f1ff, .3);
+    position: relative;
+    padding: 10px;
+    &:after,&:before{
+        content: '';
+        position: absolute;
+        top: -1px;
+        width: 7px;
+        height: 1px;
+        background: #b0f1ff;
+    }
+    &:after{
+        right: 0;
+    }
+    &:before{
+        left: 0;
+    }
+}
+.RichText-imgwrap{
+    &:after,&:before{
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-style: solid;
+        border-color:rgba(#fff, .4) ;
+        top: 0;
+    }
+    &:after{
+        right: 0;
+        border-width: 1px 1px 0 0;
+    }
+    &:before{
+        left: 0;
+        border-width: 1px 0 0 1px;
+    }
+}
+.RichText-imgwrap-zoomin{
+    cursor: pointer;
+    &:after,&:before{
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-style: solid;
+        border-color:rgba(#fff, .4) ;
+        bottom: -10px;
+    }
+    &:after{
+        border-width: 0 1px 1px 0;
+        right: -10px;
+    }
+    &:before{
+        border-width: 0 0 1px 1px;
+        left: -234px;
+    }
+}
+.eui-dialog-close{
+    background-image:url(@spritesheet-image) !important;
+    .sprite-position(@close)!important;
+    .sprite-width(@close)!important;
+    .sprite-height(@close)!important;
+    opacity: .6;
+    &:hover{
+        opacity: 1;
+    }
+    i{
+        display: none !important;
+    }
+}

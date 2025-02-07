@@ -1,0 +1,22 @@
+{
+  "@tencent/ec-ide-header": false,
+  "@tencent/lx-reqwest": true,
+  "@tencent/ec-blockly": true,
+  "@tencent/ec-blockly-editor": true,
+  "@tencent/eui": true,
+  "@tencent/ec-ace-editor": true,
+  "@tencent/ec-style-base": true,
+  "@tencent/ec-apis": false,
+  "@tencent/assetsLib": false,
+  "@tencent/ace-editor": false,
+  "@tencent/ec-check-browser": false,
+  "@tencent/ec-console": false,
+  "@tencent/ec-python-autocomplete": false,
+  "@tencent/ec-webgl-detector": false,
+  "@tencent/ec-pickr": false,
+  "@tencent/ec-audio-utils": false,
+  "@tencent/ec-speech-text": false,
+  "@future-edu/ec-blockly-speech": false,
+  "@future-edu/ec-blockly-ai": false,
+  "@future-edu/ec-blockly-translate": false
+}

@@ -1,0 +1,49 @@
+@import '../../assets/style/mixin.less';
+@prefix-cls: ~"planet";
+.@{prefix-cls}{
+    &-imgwrap{
+        height: 150px;
+        margin: 10px 0;
+        background: url(../../assets/images/planets/planet-bg.png) no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-pic{
+            width: 294px;
+            height: 130px;
+            object-fit: contain;
+        }
+    }
+    &-info{
+        &-item{
+            .align-flex();
+            // .align-flex-middle();
+            min-height: 32px;
+            padding: 0 10px;
+            color: #fff;
+            &-text{
+                flex: 1;
+                margin-top: 5px;
+            }
+            &-label{
+                color: #95C1FF;
+                width: 110px;
+                line-height: 32px;
+            }
+            &:nth-child(2n-1){
+                background: rgba(#B0F1FF, .1);
+            }
+        }
+    }
+    &-intro{
+        margin-top: 10px;
+        &-title{
+            font-size: 18px;
+            color: #69F4FF;
+            margin-bottom: 5px;
+        }
+        &-text{
+            color: #fff;
+        }
+    }
+}

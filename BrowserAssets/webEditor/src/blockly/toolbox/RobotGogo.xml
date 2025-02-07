@@ -1,0 +1,204 @@
+<category name="神态" colour="#69c12e" icon="appearance">
+    <label text="神态"></label>
+    <block type="playSurPlace" />
+    <block type="playTumble" />
+    <block type="playRedEnvelope" />
+    <block type="playDoubt" />
+    <block type="playNod" />
+    <block type="playDown" />
+    <block type="playSit" />
+    <block type="playRoll" />
+    <block type="playHandShake" />
+    <block type="playDance" />
+    <block type="playFear" />
+    <block type="playHappy" />
+    <block type="playBrake" />
+    <block type="playChaseTail" />
+</category>
+<category name="感知" colour="#ff6464" icon="detection">
+    <label text="感知"></label>
+    <block type="setRadarOn"></block>
+    <block type="getRadarSensorCount">
+        <value name="angle">
+            <shadow type="radarAngleParam">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRadarSensorInfoInAngle">
+        <value name="angle">
+            <shadow type="radarAngleParam">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getCountTime" />
+    <block type="resetCountTime" />
+    <sep gap="40"></sep>
+    <block type="getTemperatureOneValue"/>
+    <sep gap="40"></sep>
+    <block type="getLightOneValue"/>
+    <sep gap="40"></sep>
+    <block type="getHumindityOneValue"/>
+    <sep gap="40"></sep>
+    <block type="getCo2OneValue"/>
+    <sep gap="40"></sep>
+    <block type="getSo2OneValue"/>
+    <sep gap="40"></sep>
+    <block type="getNoiseOneValue"/>
+</category>
+<category name="运动" colour="#d061bc" icon="action">
+    <label text="运动"></label>
+    <block type="setMovePower">
+        <value name="power_percent">
+            <shadow type="powerPercentParam">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setMovePowerInTime">
+        <value name="power_percent">
+            <shadow type="powerPercentParam">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">3</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="rotateInTime">
+        <value name="power_percent">
+            <shadow type="powerPercentParam">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+        <value name="angle">
+            <shadow type="motionAngleParam">
+                <field name="NUM">15</field>
+            </shadow>
+        </value>
+        <value name="time">
+            <shadow type="math_number">
+                <field name="NUM">3</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="brakeUntilEnd">
+        <value name="power_percent">
+            <shadow type="powerPercentParam">
+                <field name="NUM">30</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getMoveStatus"></block>
+    <block type="getValueByPositionType"></block>
+</category>
+<category name="扩展机构" colour="#5b8bf8" icon="system">
+    <label text="扩展机构"></label>
+    <block type="activeRobotArm" />
+    <block type="checkRobotArmStatus" />
+    <block type="movePincher">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+        <value name="z">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+        <value name="y">
+            <shadow type="math_number">
+                <field name="NUM">50</field>
+            </shadow>
+        </value>
+    </block>
+</category>
+<category name="图像智能" colour="#ff6464" icon="imgdetection">
+    <label text="图像智能"></label>
+    <block type="setSensorOn"></block>
+    <block type="getRecognizedTrafficLightCount"></block>
+    <block type="getRecognizedTrafficLightInfoOfText">
+        <value name="light_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficLightInfoOfNumber">
+        <value name="light_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedHumanCount"></block>
+    <block type="getRecognizedHumanName">
+        <value name="human_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedHumanInfo">
+        <value name="human_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="setRoadRecognizeColor"></block>
+    <block type="getRecognizedRoadLineCount"></block>
+    <block type="isRecognizeRoadLineType"></block>
+    <block type="getRecognizedRoadLineInfo">
+        <value name="line_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+        <value name="point_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficSignCount"></block>
+    <block type="getRecognizedTrafficSignInfoOfText">
+        <value name="sign_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedTrafficSignInfoOfNumber">
+        <value name="sign_index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedItemCount"></block>
+    <block type="getRecognizedItemName">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="getRecognizedItemInfo">
+        <value name="index">
+            <shadow type="math_number">
+                <field name="NUM">1</field>
+            </shadow>
+        </value>
+    </block>
+  </category>
+

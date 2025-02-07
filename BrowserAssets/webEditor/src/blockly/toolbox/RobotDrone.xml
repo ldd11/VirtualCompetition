@@ -1,0 +1,263 @@
+<category name="特技" colour="#69c12e" icon="trick">
+  <label text="特技" />
+  <block type="horizontalCircularMoveThenHover">
+    <value name="rotateSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="x">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="y">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="laps">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="horizontalSprialMoveThenHover">
+    <value name="rotateSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="motionSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="x">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="y">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="laps">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="tumblingMoveThenHover">
+    <value name="distance">
+      <shadow type="droneTrickDistance">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="somersaultMoveThenHover">
+    <value name="distance">
+      <shadow type="droneTrickDistance">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="barrelRollMoveThenHover">
+    <value name="motionSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="time">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="serpentineMoveThenHover">
+    <value name="motionSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="time">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="forwardSprialMoveThenHover">
+    <value name="motionSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="time">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+</category>
+<category name="运动" colour="#d061bc" icon="action">
+  <label text="运动" />
+  <block type="turnOnFlightStatus" />
+  <block type="turnOffFlightStatus" />
+  <block type="setDroneOutputPower">
+    <value name="roll">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="pitch">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="throttle">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="yaw">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneOutputPowerAndMoveThenHover">
+    <value name="roll">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="pitch">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="throttle">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="yaw">
+      <shadow type="dronePower">
+        <field name="NUM">50</field>
+      </shadow>
+    </value>
+    <value name="time">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneMotionSpeed">
+    <value name="motionSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneMotionSpeedAndMoveThenHover">
+    <value name="motionSpeed">
+      <shadow type="droneSpeed">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="time">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="hoverAndRotateUntilEnd">
+    <value name="angle">
+      <shadow type="math_number">
+        <field name="NUM">90</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="faceToPositionThenHover">
+    <value name="x">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="y">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneRotationAngle">
+    <value name="angle">
+      <shadow type="singleAngle">
+        <field name="angle">90</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="stopMotionThenHover" />
+  <block type="getMotionSpeedOrDirectionValue" />
+  <block type="getDroneCoordinate" />
+</category>
+<category name="感知" colour="#ff6464" icon="detection">
+  <label text="感知"></label>
+  <block type="getDroneInfraredDepthSensorValue" />
+</category>
+<category name="灯光" colour="#3eaedd" icon="light">
+  <label text="灯光"></label>
+  <block type="setDroneLightColor" />
+  <block type="setDroneLightColorAndLastForSecond">
+    <value name="second">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneLightColorToFlash">
+    <value name="intervalSecond">
+      <shadow type="math_number">
+        <field name="NUM">2</field>
+      </shadow>
+    </value>
+    <value name="lightSecond">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneLightColorToFlashAndLastForSecond">
+    <value name="intervalSecond">
+      <shadow type="math_number">
+        <field name="NUM">2</field>
+      </shadow>
+    </value>
+    <value name="lightSecond">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="totalSecond">
+      <shadow type="math_number">
+        <field name="NUM">5</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="increaseDroneLightBrightness">
+    <value name="brightnessVariation">
+      <shadow type="droneLightBrightnessVariation">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="setDroneLightBrightness">
+    <value name="brightness">
+      <shadow type="droneLightBrightness">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="getDroneLightBrightness" />
+</category>

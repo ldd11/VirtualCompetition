@@ -1,0 +1,301 @@
+@import '../../assets/style/mixin.less';
+@import '../../assets/style/sprite.less';
+@prefix-cls: ~"camera";
+.@{prefix-cls}{
+    margin-top: 10px;
+    margin-bottom: 24px;
+    &-hd{
+        margin-bottom: 7px;
+        .align-flex();
+        .align-flex-middle();
+        .align-flex-space-between();
+        &-zhanwei{
+            flex: 1;
+        }
+    }
+    &-select{
+        position: relative;
+        &.expand{
+            .@{prefix-cls}-dropdown{
+                display: block;
+            }
+            .@{prefix-cls}-select-placeholder{
+                .icon-spr-arrow2{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        &-placeholder{
+            cursor: pointer;
+            .align-flex();
+            .align-flex-middle();
+            background-image:url(@spritesheet-image);
+            .sprite-position(@select-bg);
+            .sprite-width(@select-bg);
+            .sprite-height(@select-bg);
+            padding: 0 10px;
+            &-text{
+                flex: 1;
+                .ellipsis(140px);
+                font-size: 16px;
+                color: #95c1ff;
+            }
+            .icon-spr-arrow2{
+                opacity: .5;
+                transition: all 200ms;
+            }
+        }
+    }
+    &-dropdown{
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 32px;
+        width: 190px;
+        z-index: 3;
+        &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -17px;
+            width: 100%;
+            height: 17px;
+        }
+        &-hd{
+            background-image:url(@spritesheet-image);
+            .sprite-position(@dropdown-hd);
+            .sprite-width(@dropdown-hd);
+            .sprite-height(@dropdown-hd);
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                left: -9px;
+                top: -9px;
+                background-image:url(@spritesheet-image);
+                .sprite-position(@icon-xiushi);
+                .sprite-width(@icon-xiushi);
+                .sprite-height(@icon-xiushi);
+            }
+        }
+        &-bd{
+            background: url(../../assets/images/dropdown-bd.png) no-repeat 0 bottom;
+            // min-height: 100px;
+            padding-bottom: 10px;
+        }
+        &-item{
+            cursor: pointer;
+            color: #79b7f7;
+            line-height: 30px;
+            position: relative;
+            padding: 0 10px 0 40px;
+            .ellipsis();
+            &:hover{
+                color: #fff;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    background-image:url(@spritesheet-image);
+                    .sprite-position(@dropdown-hover);
+                    .sprite-width(@dropdown-hover);
+                    .sprite-height(@dropdown-hover);
+                }
+            }
+            &.current{
+                &:before{
+                    content: '';
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-image:url(@spritesheet-image);
+                    .sprite-position(@gou);
+                    .sprite-width(@gou);
+                    .sprite-height(@gou);
+                }
+            }
+        }
+    }
+    &-ctrls{
+        &-btn{
+            cursor: pointer;
+            background-image:url(@spritesheet-image);
+            .sprite-position(@btn-paizhao);
+            .sprite-width(@btn-paizhao);
+            .sprite-height(@btn-paizhao);
+            text-indent: -999em;
+        }
+    }
+    &-content{
+        width: 294px;
+        height: 204px;
+        position: relative;
+        color: #fff;
+        .align-flex();
+        .align-flex-middle();
+        .align-flex-center();
+        &:after,&:before{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-style: solid;
+            border-color: rgba(#fff, .4);
+        }
+        &:before{
+            border-width:1px 0 0 1px;
+            left: 0;
+            top: 0;
+        }
+        &:after{
+            border-width:1px 1px 0 0; 
+            right: 0;
+            top: 0;
+        }
+        &-xiushi{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            &:after,&:before{
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-style: solid;
+                border-color: rgba(#fff, .4);
+            }
+            &:before{
+                border-width:0 0 1px 1px;
+                left: 0;
+                bottom: 0;
+            }
+            &:after{
+                border-width:0 1px 1px 0; 
+                right: 0;
+                bottom: 0;
+            }
+        }
+        &-player{
+            width: 294px;
+            height: 204px;
+            position: relative;
+            &-pic{
+                width: 294px;
+                height: 204px;
+                object-fit: cover;    
+            }
+            .empty{
+                &:after{
+                    position: absolute;
+                    content: '';
+                    left: 50%;
+                    top: 10px;
+                    transform: translateX(-50%);
+                    background-image:url(@spritesheet-image);
+                    .sprite-position(@wangge);
+                    .sprite-width(@wangge);
+                    .sprite-height(@wangge);
+                }
+                
+            }
+        }
+    }
+    &-countdown{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        &-title{
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+        &-item{
+            background-image:url(@spritesheet-image);
+            .sprite-position(@countdown);
+            .sprite-width(@countdown);
+            .sprite-height(@countdown);
+            .align-flex();
+            .align-flex-middle();
+            .align-flex-center();
+            margin: -30px auto 0;
+            &-num{
+                background-image:url(@spritesheet-image);
+                text-indent: -999em;
+                &.num-0{
+                    .sprite-position(@num-0);
+                    .sprite-width(@num-0);
+                    .sprite-height(@num-0);
+                }
+                &.num-1{
+                    .sprite-position(@num-1);
+                    .sprite-width(@num-1);
+                    .sprite-height(@num-1);
+                }
+                &.num-2{
+                    .sprite-position(@num-2);
+                    .sprite-width(@num-2);
+                    .sprite-height(@num-2);
+                }
+                &.num-3{
+                    .sprite-position(@num-3);
+                    .sprite-width(@num-3);
+                    .sprite-height(@num-3);
+                }
+                &.num-4{
+                    .sprite-position(@num-4);
+                    .sprite-width(@num-4);
+                    .sprite-height(@num-4);
+                }
+                &.num-5{
+                    .sprite-position(@num-5);
+                    .sprite-width(@num-5);
+                    .sprite-height(@num-5);
+                }
+                &.num-6{
+                    .sprite-position(@num-6);
+                    .sprite-width(@num-6);
+                    .sprite-height(@num-6);
+                }
+                &.num-7{
+                    .sprite-position(@num-7);
+                    .sprite-width(@num-7);
+                    .sprite-height(@num-7);
+                }
+                &.num-8{
+                    .sprite-position(@num-8);
+                    .sprite-width(@num-8);
+                    .sprite-height(@num-8);
+                }
+                &.num-9{
+                    .sprite-position(@num-9);
+                    .sprite-width(@num-9);
+                    .sprite-height(@num-9);
+                }
+            }
+        }
+    }
+    &-thumbnail{
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        width: 120px;
+        height: 90px;
+        border: 2px solid #4bfff9;
+        box-shadow: 4px 0 7px rgba(#020202, .55);
+        &-pic{
+            width: 116px;
+            height: 86px;
+            object-fit: cover;
+        }
+    }
+}
